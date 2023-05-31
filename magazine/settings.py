@@ -30,7 +30,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['kush-online-magazine.herokuapp.com', 'localhost']
-# ALLOWED_HOSTS = ['8000-nazek-altayeb-kush-magaz-2r04cx8h3c.us2.codeanyapp.com']
 
 
 # Application definition
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'article',
+    'account',
 ]
 
 MIDDLEWARE = [

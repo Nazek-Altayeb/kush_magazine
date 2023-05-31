@@ -15,7 +15,8 @@ class Article(models.Model):
         return self.title + '|' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse('article', args=str(self.pk))
+       # return reverse('article', args=str(self.pk))
+        return reverse('home')
 
 
 """class Comment(models.Model):
