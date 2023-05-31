@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> {{article.title}}</h2>
+<small> {{article.author.first_name}</small><br />
+<hr>
+{{article.body}}
+<br />
+<a href="{% url 'home' %}">Back</a>
+
+
+{% endblock %}
