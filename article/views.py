@@ -34,4 +34,5 @@ class UpdateArticleView(UpdateView):
 class DeleteArticleView(UpdateView):
     model = Article
     template_name = 'delete-article.html'
+    fields = '__all__'
     success_url = reverse_lazy('home')
