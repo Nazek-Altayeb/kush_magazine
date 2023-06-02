@@ -3,7 +3,6 @@
 {% block content %}
 
 
-
 {% if user.is_authenticated %}
 <div class="container-fluid">
     <div class="row">
@@ -19,13 +18,14 @@
         </div>
     </div>
 </div>
-
+<script>
+    var userId = "{{ user.id }}";
+    document.getElementById("user-id").value = userId;
+</script>
 
 {% else %}
 You are not logged in, it's not possible to write a new article
-
 {% endif %}
-
 
 
 {% endblock %}
