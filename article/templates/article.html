@@ -2,16 +2,27 @@
 
 {% block content %}
 
-<h2> {{article.title}}</h2>
-<small> {{article.author.first_name}} -
-    <a href="{% url 'edit-article' article.pk %}"> Edit</a>
-    <a href="{% url 'delete-article' article.pk %}"> Delete</a>
-</small>
-<br />
-<hr>
-{{article.body}}
-<br />
-<a href="{% url 'home' %}">Back</a>
+{% if user.is_authenticated %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h2> {{article.title}}</h2>
+            <small> {{article.author.first_name}} - </small>
+            {% if user.id == article.author.id %}
+            <a href="{% url 'edit-article' article.pk %}"> Edit</a>
+            <a href="{% url 'delete-article' article.pk %}"> Delete</a>
+            {% endif %}
+            <br />
+            <hr>
+            {{article.body}}
+            <br />
+            <a href="{% url 'home' %}">Back</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
 
 
 {% endblock %}
