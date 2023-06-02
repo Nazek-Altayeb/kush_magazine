@@ -8,6 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2> Add a new article</h2>
+            <small>By : {{user.username}}</small>
             <div class="form-group">
                 <form method="POST">
                     {% csrf_token %}
@@ -21,7 +22,7 @@
 <script>
     var userId = "{{ user.id }}";
     document.getElementById("user-id").value = userId;
-    document.getElementById("user-id").innerText = "{{ user.username }}"
+    document.getElementById("user-id").Text = "{{ user.first_name }}"
 </script>
 
 {% else %}
