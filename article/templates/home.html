@@ -7,7 +7,8 @@
 <ul>
     {% for article in object_list %}
     <li>
-        <a href="{% url 'article' article.pk %}">{{article.title}}</a> {{article.author.first_name}} <br />
+        <a href="{% url 'article' article.pk %}">{{article.title}}</a> {{article.author.name}} <a
+            href="{% url 'edit-article' article.pk %}"> Edit</a><br />
         {{article.body|slice:":200"}}
     </li>
     {% endfor %}

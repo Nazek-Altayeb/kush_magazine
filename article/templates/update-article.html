@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Write a new article {% endblock %}
+{% block title %} Edit Article {% endblock %}
 {% block content %}
 
 
@@ -8,12 +8,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <h2> Add a new article</h2>
+            <h2> Edit article</h2>
             <div class="form-group">
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-secondary">POST</button>
+                    <button class="btn btn-secondary">Updade</button>
                 </form>
             </div>
         </div>
