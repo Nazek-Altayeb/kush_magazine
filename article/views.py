@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Article
-from .forms import ArticleForm
+from .forms import ArticleForm, EditArticleForm
 
 # Create your views here.
 
@@ -25,5 +25,6 @@ class AddArticleView(CreateView):
 
 class UpdateArticleView(UpdateView):
     model = Article
+    form_class = EditArticleForm
     template_name = 'update-article.html'
-    fields = ['title', 'body']
+    # fields = ['title', 'body']
