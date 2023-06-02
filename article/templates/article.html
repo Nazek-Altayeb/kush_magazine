@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2> {{article.title}}</h2>
-            <small> {{article.author.first_name}} - </small>
+            <small> {{article.author.username}} - </small>
             {% if user.id == article.author.id %}
             <a href="{% url 'edit-article' article.pk %}"> Edit</a>
             <a href="{% url 'delete-article' article.pk %}"> Delete</a>
