@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Article, Category
-from .forms import ArticleForm, EditArticleForm, CategoryForm
+from .models import Article
+from .forms import ArticleForm, EditArticleForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
@@ -12,12 +12,13 @@ class HomeView(ListView):
     model = Article
     template_name = 'home.html'
 
-    def get_context_data(self, *args, **kwargs):
+""" def get_context_data(self, *args, **kwargs):
         categories = Category.objects.all()
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context['categories'] = categories
         return context
-        """artc = get_object_or_404(Article, id=self.kwargs['pk'])
+        ...............
+        artc = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = artc.total_likes()
         liked = False
         if artc.likes.filter(id=self.request.user.id).exist()
@@ -32,9 +33,9 @@ class ArticleDetailView(DetailView):
     template_name = 'article.html'
     
     def get_context_data(self, *args, **kwargs):
-        categories = Category.objects.all()
+        # categories = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
-        context['categories'] = categories
+        # context['categories'] = categories
         artc = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = artc.total_likes()
         liked = False
@@ -66,15 +67,15 @@ class DeleteArticleView(DeleteView):
     success_url = reverse_lazy('home')
     
  
-class AddCategoryView(CreateView):
+"""class AddCategoryView(CreateView):
     model = Category
     form_class = CategoryForm
     template_name = 'add-Category.html'
-    # fields = '__all__'
+    # fields = '__all__'"""
     
        
 def LikeView(request, pk):
-    article = get_object_or_404(Article, id=request.Post.get('article_id'))
+    article = get_object_or_404(Article, id=request.Article.get('article_id'))
     liked =  False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
