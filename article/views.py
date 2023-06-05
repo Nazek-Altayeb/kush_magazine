@@ -35,6 +35,14 @@ class ArticleDetailView(DetailView):
         categories = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
         context['categories'] = categories
+        artc = get_object_or_404(Article, id=self.kwargs['pk'])
+        total_likes = artc.total_likes()
+        liked = False
+        if artc.likes.filter(id=self.request.user.id).exist():
+            liked = True
+            context["total_likes"] = total_likes
+            context["liked"] = liked
+        
         return context
 
 
