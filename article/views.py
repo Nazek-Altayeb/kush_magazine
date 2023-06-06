@@ -33,7 +33,7 @@ class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article.html'
 
-    def get_context_data(self, *args, **kwargs):
+    """def get_context_data(self, *args, **kwargs):
         # categories = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(
             *args, **kwargs)
@@ -47,6 +47,7 @@ class ArticleDetailView(DetailView):
             context["liked"] = liked
 
         return context
+"""
 
 
 class AddArticleView(CreateView):
