@@ -76,12 +76,10 @@ class DeleteArticleView(DeleteView):
     template_name = 'add-Category.html'
     # fields = '__all__'"""
 
-
+"""
 def LikeView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article_id'))
-    article.likes.add(request.user)
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
-    """liked = False
+    liked = False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
         liked = False

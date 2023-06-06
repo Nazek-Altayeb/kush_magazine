@@ -14,7 +14,7 @@
             {{article.body}}
             <br />
             <a href="{% url 'home' %}">Back</a>
-            <form action="{% url 'like_article' article.pk %}" method="POST">
+            <!--<form action="{% url 'like_article' article.pk %}" method="POST">
                 {% csrf_token %}
                 {% if user.is_authenticated %}
                 {% if liked %}
@@ -29,7 +29,7 @@
                 {% else %}
                 <small> <a href="{% url 'login' %}">Login </a> to like </small>
                 {% endif %}
-            </form>
+            </form>-->
         </div>
     </div>
 </div>

@@ -10,5 +10,5 @@ urlpatterns = [
          UpdateArticleView.as_view(), name='edit-article'),
     path('article/delete-article/<int:pk>',
          DeleteArticleView.as_view(), name='delete-article'),
-    path('like/<int:pk>', LikeView, name='like_article')
+    # path('like/<int:pk>', LikeView, name='like_article')
 ]
