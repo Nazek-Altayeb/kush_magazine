@@ -41,5 +41,5 @@ class DeleteArticleView(DeleteView):
 class AddCategoryView(CreateView):
     model = Category
     form_class = CategoryForm
-    template_name = 'add-Category.html'
+    template_name = 'add-category.html'
     # fields = '__all__'"""
