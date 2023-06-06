@@ -11,7 +11,7 @@ for category in categories:
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ('title', 'author', 'body', )
+        fields = ('title', 'author', 'category', 'body', )
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'required': 'True'}),
             'author': forms.TextInput(attrs={'class': 'form-control', 'value': '',  'id': 'user-id', 'type': 'hidden'}),
