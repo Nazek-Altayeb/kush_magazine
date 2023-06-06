@@ -10,7 +10,7 @@ class Article(models.Model):
     body = models.CharField(max_length=1500, null=False, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # topic = models.ForeignKey("Topic", on_delete=models.CASCADE)
-    # category = models.CharField(max_length=100, default='not-categorized')
+    category = models.CharField(max_length=100, default='not-categorized')
     # likes = models.ManyToManyField(User, related_name='mag_articles')
 
     def __str__(self):
