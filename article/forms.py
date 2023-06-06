@@ -6,6 +6,7 @@ categories_list = []
 for category in categories:
     categories_list.append(category)"""
 
+
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
