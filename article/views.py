@@ -12,6 +12,7 @@ class HomeView(ListView):
     model = Article
     template_name = 'home.html'
 
+
 """ def get_context_data(self, *args, **kwargs):
         categories = Category.objects.all()
         context = super(HomeView, self).get_context_data(*args, **kwargs)
@@ -26,15 +27,16 @@ class HomeView(ListView):
         context["total_likes"] = total_likes
         context["liked"] = liked
         return context"""
-        
-         
+
+
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article.html'
-    
+
     def get_context_data(self, *args, **kwargs):
         # categories = Category.objects.all()
-        context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
+        context = super(ArticleDetailView, self).get_context_data(
+            *args, **kwargs)
         # context['categories'] = categories
         artc = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = artc.total_likes()
@@ -43,7 +45,7 @@ class ArticleDetailView(DetailView):
             liked = True
             context["total_likes"] = total_likes
             context["liked"] = liked
-        
+
         return context
 
 
@@ -65,23 +67,22 @@ class DeleteArticleView(DeleteView):
     model = Article
     template_name = 'delete-article.html'
     success_url = reverse_lazy('home')
-    
- 
+
+
 """class AddCategoryView(CreateView):
     model = Category
     form_class = CategoryForm
     template_name = 'add-Category.html'
     # fields = '__all__'"""
-    
-       
+
+
 def LikeView(request, pk):
-    article = get_object_or_404(Article, id=request.Article.get('article_id'))
-    liked =  False
+    article = get_object_or_404(Article, id=request.POST.get('article_id'))
+    liked = False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
         liked = False
     else:
         article.likes.add(request.user)
         liked = True
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)] )
-
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
