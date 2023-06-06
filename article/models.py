@@ -11,29 +11,25 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # topic = models.ForeignKey("Topic", on_delete=models.CASCADE)
     # category = models.CharField(max_length=100, default='not-categorized')
-    likes = models.ManyToManyField(User, related_name='mag_articles')
+    # likes = models.ManyToManyField(User, related_name='mag_articles')
 
     def __str__(self):
         return self.title + '|' + str(self.author)
 
     def get_absolute_url(self):
-       # return reverse('article', args=str(self.pk))
         return reverse('home')
-    
-    def total_likes(self):
-        return self.likes.count()
 
 
-"""class Category(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse('home')
 
-"""
+
 """class Comment(models.Model):
     body = models.CharField(max_length=250, null=False, blank=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
