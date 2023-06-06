@@ -11,7 +11,7 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # topic = models.ForeignKey("Topic", on_delete=models.CASCADE)
     # category = models.CharField(max_length=100, default='not-categorized')
-    Likes = models.ManyToManyField(User, related_name='mag_articles')
+    likes = models.ManyToManyField(User, related_name='mag_articles')
 
     def __str__(self):
         return self.title + '|' + str(self.author)
