@@ -79,11 +79,13 @@ class DeleteArticleView(DeleteView):
 
 def LikeView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article_id'))
-    liked = False
+    article.likes.add(request.user)
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
+    """liked = False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
         liked = False
     else:
         article.likes.add(request.user)
         liked = True
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])"""
