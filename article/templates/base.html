@@ -56,22 +56,23 @@
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif %}
-                </ul>
-
-                <span class="navbar-text text-muted">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu">
+                        <div class="dropdown-menu">
                             {% if categories %}
                             {% for category in categories %}
-                            <li><a class="dropdown-item" href="{% url 'category' category %}">{{category}}</a></li>
+                            <a class="dropdown-item" href="{% url 'category' category %}">{{category}}</a>
                             {% endfor %}
                             {% endif %}
-                        </ul>
+                        </div>
                     </li>
+                </ul>
+
+                <span class="navbar-text text-muted">
+                    <h4> not yet</h4>
                 </span>
             </div>
         </div>
