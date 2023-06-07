@@ -30,7 +30,7 @@ class ArticleDetailView(DetailView):
         article = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = article.total_likes()
         liked = False
-        if article.likes.filter(id=self.request.user.id).exist():
+        if article.likes.filter(id=self.request.user.id).exists():
             liked = True
             context["total_likes"] = total_likes
             context["liked"] = liked
