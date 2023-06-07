@@ -16,5 +16,16 @@
             <a href="{% url 'home' %}">Back</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            <form action="{url 'like-article' article.pk}" method="POST">
+                {% csrf_token %}
+                <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
+                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+            </form>
+
+        </div>
+    </div>
 </div>
 {% endif %} {% endblock %}

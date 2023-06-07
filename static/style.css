@@ -140,3 +140,23 @@ body {
     background: transparent;
     border: none;
 }
+
+
+button {
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}

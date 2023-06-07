@@ -57,3 +57,19 @@ class AddCategoryView(CreateView):
 def CategoryView(request, catg):
     category_articles = Article.objects.filter(category=catg)
     return render(request, 'categories.html', {'catg': catg.title(), 'category_articles': category_articles})
+
+
+def LikeView(request, pk):
+    article = get_object_or_404(Article, id=request.POST.get('article-id'))
+    article.likes.add(request.user)
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
+    """liked = False
+    if article.likes.filter(id=request.user.id).exists():
+        article.likes.remove(request.user)
+        liked = False
+    else:
+        article.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])"""
+
+
