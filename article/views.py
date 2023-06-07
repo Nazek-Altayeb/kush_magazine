@@ -43,5 +43,5 @@ class AddCategoryView(CreateView):
 
 
 def CategoryView(request, catg):
-    category_articles = Article.objects.filter(category=catg.replace('-', ''))
-    return render(request, 'categories.html', {'catg': catg.title().replace('-', ''), 'category_articles': category_articles})
+    category_articles = Article.objects.filter(category=catg)
+    return render(request, 'categories.html', {'catg': catg.title(), 'category_articles': category_articles})
