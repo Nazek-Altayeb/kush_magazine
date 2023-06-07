@@ -8,7 +8,8 @@
     {% for article in object_list %}
     <li>
         <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
-        {% if user.id == article.author.id %} <a href="{% url 'category' article.category %}">{{article.category}}</a>
+        {% if user.id == article.author.id %} <a
+            href="{% url 'category' article.category|slugify %}">{{article.category}}</a>
         <a href="{% url 'edit-article' article.pk %}"> Edit</a>
         <a href="{% url 'delete-article' article.pk %}"> Delete</a>
         <br />
