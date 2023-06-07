@@ -32,8 +32,8 @@ class ArticleDetailView(DetailView):
         liked = False
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
-            context["total_likes"] = total_likes
-            context["liked"] = liked
+        context["total_likes"] = total_likes
+        context["liked"] = liked
 
         return context
 
