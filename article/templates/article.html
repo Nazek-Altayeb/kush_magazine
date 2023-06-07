@@ -1,15 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-{% if user.is_authenticated %}
+
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
             <h2>{{article.title}}</h2>
             <small> {{article.author.username}} - </small>
+            {% if user.is_authenticated %}
             {% if user.id == article.author.id %}
             <a href="{% url 'edit-article' article.pk %}"> Edit</a>
             <a href="{% url 'delete-article' article.pk %}"> Delete</a>
             {% endif %}
+            {% endif%}
             <br />
             <hr />
             {{article.body}}
@@ -21,6 +23,7 @@
         <div class="col-md-3">
             <form action="{% url 'like-article' article.pk %}" method="POST">
                 {% csrf_token %}
+                {% if user.is_authenticated %}
                 {% if liked %}
                 <button class="btn" id="red" type="submit" name="article-id" value="{{article.id}}"><i
                         class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
@@ -29,12 +32,13 @@
                 <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
                         class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
+                {% else %}
+                <h2>In order to like articles, kindly <a href="{% url 'login' %}">Login</a> first...</h2>
                 {{total_likes}}
             </form>
 
         </div>
     </div>
 </div>
-{% else %}
-<h2>In order to like articles, kindly <a href="{% url 'login' %}">Login</a> first...</h2>
-{% endif %} {% endblock %}
+
+{% endblock %}
