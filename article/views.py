@@ -76,6 +76,6 @@ def LikeView(request, pk):
     else:
         article.likes.add(request.user)
         liked = True
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
+    return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
