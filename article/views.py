@@ -12,6 +12,12 @@ class HomeView(ListView):
     model = Article
     template_name = 'home.html'
 
+    def get_context_data(self, *args, **kwargs):
+        categories = Category.objects.all()
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        context['categories'] = categories
+        return context
+
 
 class ArticleDetailView(DetailView):
     model = Article
