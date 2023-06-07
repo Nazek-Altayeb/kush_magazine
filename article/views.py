@@ -29,7 +29,11 @@ class ArticleDetailView(DetailView):
         context['categories'] = categories
         article = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = article.total_likes()
-        context['total_likes'] = total_likes
+        liked = False
+        if article.likes.filter(id=self.request.user.id).exist():
+            liked = True
+            context["total_likes"] = total_likes
+            context["liked"] = liked
 
         return context
 
@@ -65,15 +69,13 @@ def CategoryView(request, catg):
 
 def LikeView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
-    article.likes.add(request.user)
-    return HttpResponseRedirect(reverse('article', args=[str(pk)]))
-    """liked = False
+    liked = False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
         liked = False
     else:
         article.likes.add(request.user)
         liked = True
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)])"""
+    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
 
 
