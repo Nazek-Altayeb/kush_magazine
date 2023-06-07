@@ -27,6 +27,10 @@ class ArticleDetailView(DetailView):
         categories = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
         context['categories'] = categories
+        current-article = get_object_or_404(Article, id=self.kwargs['pk'])
+        total-likes = current-article.total-likes()
+        context['total-likes'] = total-likes
+
         return context
 
 

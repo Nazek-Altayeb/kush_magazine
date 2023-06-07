@@ -21,7 +21,7 @@
             <form action="{% url 'like-article' article.pk %}" method="POST">
                 {% csrf_token %}
                 <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
-                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button> {{total-likes}}
                 <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
             </form>
 
