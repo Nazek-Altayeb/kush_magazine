@@ -33,7 +33,7 @@
                         class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
                 {% else %}
-                <h2>In order to like articles, kindly <a href="{% url 'login' %}">Login</a> first...</h2>
+                <small>In order to like articles, kindly <a href="{% url 'login' %}">Login</a> first...</small>
                 {% endif %}
                 {{total_likes}}
             </form>
