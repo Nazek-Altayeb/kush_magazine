@@ -22,14 +22,12 @@ class AddArticleView(CreateView):
     model = Article
     form_class = ArticleForm
     template_name = 'add-article.html'
-    # fields = '__all__'
 
 
 class UpdateArticleView(UpdateView):
     model = Article
     form_class = EditArticleForm
     template_name = 'update-article.html'
-    # fields = ['title', 'body']
 
 
 class DeleteArticleView(DeleteView):
@@ -42,4 +40,8 @@ class AddCategoryView(CreateView):
     model = Category
     form_class = CategoryForm
     template_name = 'add-category.html'
-    # fields = '__all__'"""
+
+
+def CategoryView(request, catg):
+    category_articles = Article.objects.filter(category=catg)
+    return render(request, 'categories.html', {'catg':catg.title(), 'category_articles':category_articles})
