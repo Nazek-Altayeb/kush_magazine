@@ -62,7 +62,7 @@ def CategoryView(request, catg):
 def LikeView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     article.likes.add(request.user)
-    return HttpResponseRedirect(reverse('article'), args=[str(pk)])
+    return HttpResponseRedirect(reverse('article', args=[str(pk)]))
     """liked = False
     if article.likes.filter(id=request.user.id).exists():
         article.likes.remove(request.user)
