@@ -68,6 +68,7 @@
                             {% if categories %}
                             {% for category in categories %}
                             <li><a class="dropdown-item" href="{% url 'category' category %}">{{category}}</a></li>
+                            {% endfor %}
                             {% endif %}
                         </ul>
                     </li>
