@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
 
 # Create your models here.
 
@@ -33,11 +34,14 @@ class Category(models.Model):
         return reverse('home')
 
 
-"""class Comment(models.Model):
-    body = models.CharField(max_length=250, null=False, blank=False)
+class Comment(models.Model):
+    date_and_time= models.DateTimeField(default=timezone.now)
+    body = models.CharField(max_length=1000, null=False, blank=False)
+    article = models.ForeignKey("Article", related_name="comments", on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    article = models.ForeignKey("Article", on_delete=models.CASCADE)"""
-
+   
+    def __str__(self):
+        return '%s - %s' % (self.article.title, self.user)
 
 """class Topic(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)

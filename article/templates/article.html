@@ -35,6 +35,21 @@
             </form>
         </div>
     </div>
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-md-5">
+            <h2> Add comment</h2>
+            <small>By : {{user.username}}</small>
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}

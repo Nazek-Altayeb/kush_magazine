@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Category
+from .models import Article, Category, Comment
 
 
 categories = Category.objects.all().values_list('name', 'name')
@@ -37,3 +37,10 @@ class CategoryForm(forms.ModelForm):
         widget = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ("date_and_time","body",)
+

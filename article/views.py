@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Article, Category
-from .forms import ArticleForm, EditArticleForm, CategoryForm
+from .forms import ArticleForm, EditArticleForm, CategoryForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
@@ -22,6 +22,7 @@ class HomeView(ListView):
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article.html'
+    form_class = CommentForm
 
     def get_context_data(self, *args, **kwargs):
         # categories = Category.objects.all()
