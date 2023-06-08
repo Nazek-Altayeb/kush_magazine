@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
@@ -27,17 +26,13 @@
                 {% if liked %}
                 <button class="btn" id="red" type="submit" name="article-id" value="{{article.id}}"><i
                         class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-
                 {% else %}
                 <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
                         class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
-                {% else %}
-                <small>In order to like articles, kindly <a href="{% url 'login' %}">Login</a> first...</small>
+                {{total_likes}}
                 {% endif %}
-                {{total_likes}} likes
             </form>
-
         </div>
     </div>
 </div>
