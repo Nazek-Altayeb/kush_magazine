@@ -41,7 +41,8 @@
             {% if article.comments.all %}
             {% for comment in article.comments.all %}
             <div>
-                <p> comment</p>
+                <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
+                <p>{{comment.body}}</p>
             </div>
             {% endfor %}
             {% endif %}
