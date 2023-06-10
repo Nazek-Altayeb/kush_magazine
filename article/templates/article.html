@@ -28,17 +28,18 @@
                         class="fa-solid fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% else %}
                 <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
-                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>{{total_likes}}
                 {% endif %}
-                {{total_likes}}
+                <button class="btn" id="add_comment" type="submit"><i class="fa fa-comments-o"
+                        aria-hidden="true"></i></button>
                 {% endif %}
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-md-5">
-            <small> Comments</small>
             {% if article.comments.all %}
+            <small> Comments</small>
             {% for comment in article.comments.all %}
             <div>
                 <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
@@ -63,5 +64,13 @@
     </div>
     {% endif %}
 </div>
-
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        event.preventDefault();
+        element = document.getElementById('add_comment');
+        element.addEventListener('click', function () {
+            element.style.display = block;
+        }
+        });
+</script>
 {% endblock %}
