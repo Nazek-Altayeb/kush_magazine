@@ -35,10 +35,19 @@
             </form>
         </div>
     </div>
+    <div class="row">
+        <div class="col md 6">
+            <small> Comments</small>
+            {% if article.comments.all%}
+            {% for comment in article.comments.all%}
+            <p> comment</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col-md-5">
-            <h2> Add comment</h2>
             <small>By : {{user.username}}</small>
             <div class="form-group">
                 <form method="POST">
