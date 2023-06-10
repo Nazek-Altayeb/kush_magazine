@@ -36,11 +36,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col md 6">
+        <div class="col-md-5">
             <small> Comments</small>
-            {% if article.comments.all%}
-            {% for comment in article.comments.all%}
-            <p> comment</p>
+            {% if article.comments.all %}
+            {% for comment in article.comments.all %}
+            <div>
+                <p> comment</p>
+            </div>
             {% endfor %}
             {% endif %}
         </div>
