@@ -36,7 +36,7 @@
             </form>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="comment_block">
         <div class="col-md-5">
             {% if article.comments.all %}
             <small> Comments</small>
@@ -67,9 +67,10 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
-        element = document.getElementById('add_comment');
-        element.addEventListener('click', function () {
-            element.style.display = block;
+        add_comment_button = document.getElementById('add_comment');
+        comment_block = document.getElementById('comment_block');
+        add_comment_button.addEventListener('click', function () {
+            comment_block.style.display = block;
         });
     });
 </script>
