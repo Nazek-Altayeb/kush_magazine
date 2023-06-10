@@ -28,9 +28,10 @@
                         class="fa-solid fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% else %}
                 <button class="btn" id="green" type="submit" name="article-id" value="{{article.id}}"><i
-                        class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>{{total_likes}}
+                        class="fa-light fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
-                <button class="btn" id="add_comment" type="submit"><i class="fa fa-comments-o"
+                {{total_likes}}
+                <button class="btn" id="add_comment" type="submit"><i class="fa fa-comments"
                         aria-hidden="true"></i></button>
                 {% endif %}
             </form>
