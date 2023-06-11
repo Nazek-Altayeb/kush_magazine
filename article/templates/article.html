@@ -30,13 +30,13 @@
                         class="far fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
                 {{total_likes}}
-                <button class="btn" id="add_comment" type="submit"><i class="fa fa-comments"
+                <button class="btn" id="add_comment" type="submit" onclick="comment()"><i class="fa fa-comments"
                         aria-hidden="true"></i></button>
                 {% endif %}
             </form>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="display:none">
         <div class="col-md-5">
             {% if article.comments.all %}
             <small> Comments</small>
@@ -65,9 +65,8 @@
     {% endif %}
 </div>
 <script>
-    add_comment_button = document.getElementById('add_comment');
-    comment_block = document.getElementById('comment_block');
-    add_comment_button.addEventListener('click', function () {
+    comment(function () {
+        comment_block = document.getElementById('comment_block');
         comment_block.style.display = block;
     });
 </script>
