@@ -156,3 +156,7 @@ button {
 #comment_block {
     display: none;
 }
+
+#green {
+    color: green;
+}
