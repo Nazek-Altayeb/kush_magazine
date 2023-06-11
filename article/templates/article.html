@@ -27,8 +27,8 @@
                 <button class="btn" type="submit" name="article-id" value="{{article.id}}"><i
                         class="fa-solid fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% else %}
-                <button class="btn"  type="submit" name="article-id" value="{{article.id}}"><i
-                        class="fa-thin fa-thumbs-up" aria-hidden="true"></i></button>
+                <button class="btn" type="submit" name="article-id" value="{{article.id}}"><i class="fa fa-thumbs-down"
+                        aria-hidden="true"></i></button>
                 {% endif %}
                 {{total_likes}}
                 <button class="btn" id="add_comment" type="submit"><i class="fa fa-comments"
@@ -37,7 +37,7 @@
             </form>
         </div>
     </div>
-    <div class="row" id="comment_block">
+    <div class="row">
         <div class="col-md-5">
             {% if article.comments.all %}
             <small> Comments</small>
@@ -51,7 +51,7 @@
         </div>
     </div>
     {% if user.is_authenticated %}
-    <div class="row">
+    <div class="row" id="comment_block">
         <div class="col-md-5">
             <small>By : {{user.username}}</small>
             <div class="form-group">
