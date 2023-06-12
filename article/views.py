@@ -36,10 +36,13 @@ class ArticleDetailView(FormMixin, DetailView):
             liked = True
         context["total_likes"] = total_likes
         context["liked"] = liked
+        if article.comments.filter(id=self.request).exists():
+            comments = article.comments
+        context["comments"] = total_likes
 
         return context
 
-    def get(self, request, *args, **kwargs):
+    """def get(self, request, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
         comments = article.comments
@@ -48,7 +51,7 @@ class ArticleDetailView(FormMixin, DetailView):
                 "comments": comments,
                 "comment_form": CommentForm()
             },
-        )
+        )"""
 
     def post(self, request, *args, **kwargs):
 
