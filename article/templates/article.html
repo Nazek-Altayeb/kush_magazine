@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -33,10 +33,10 @@
                         class="far fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
                 {% endif %}
                 {{total_likes}}
-                <button class="btn" id="add_comment" onclick="comment()"><i class="fa fa-comments"
-                        aria-hidden="true"></i></button>
                 {% endif %}
             </form>
+            <button class="btn" id="add_comment" onclick="comment()"><i class="fa fa-comments"
+                    aria-hidden="true"></i></button>
         </div>
     </div>
     <div class="row" style="display:none">
@@ -71,4 +71,4 @@
 {% endblock %}
 {% block js_block %}
 <script type="text/javascript" src="{% static 'script/article.js' %}"></script>
-    {% endblock %}
+{% endblock %}

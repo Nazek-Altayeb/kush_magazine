@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['kush-online-magazine.herokuapp.com', 'localhost', '8000-nazek-altayeb-kush-magaz-713fsmh5dk.us2.codeanyapp.com']
 
+CSRF_TRUSTED_ORIGINS = ["https://8000-nazek-altayeb-kush-magaz-713fsmh5dk.us2.codeanyapp.com"]
+
 # Application definition
 
 INSTALLED_APPS = [
