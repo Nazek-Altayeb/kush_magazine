@@ -43,7 +43,7 @@
         <div class="col-md-5">
             {% if article.comments.all %}
             <small> Comments</small>
-            {% for comment in comments %}
+            {% for comment in article.comments.all %}
             <div>
                 <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
                 <p>{{comment.body}}</p>
@@ -58,7 +58,7 @@
             <small>By : {{user.username}}</small>
             <div class="form-group">
                 <form method="POST">
-                    {{ comment_form | crispy }}
+                    {{ comment_form}}
                     {% csrf_token %}
                     <button class="btn btn-secondary" type="submit" name="article-id"
                         value="{{article.id}}">Add</button>

@@ -36,9 +36,6 @@ class ArticleDetailView(FormMixin, DetailView):
             liked = True
         context["total_likes"] = total_likes
         context["liked"] = liked
-        if article.comments.filter(id=self.request).exists():
-            comments = article.comments
-        context["comments"] = total_likes
 
         return context
 
