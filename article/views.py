@@ -21,8 +21,8 @@ class HomeView(ListView):
 
 class ArticleDetailView(DetailView):
     model = Article
-    template_name = 'article.html'
     form_class = CommentForm
+    template_name = 'article.html'    
 
     def get_context_data(self, *args, **kwargs):
         # categories = Category.objects.all()
