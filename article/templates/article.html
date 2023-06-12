@@ -65,5 +65,8 @@
     </div>
     {% endif %}
 </div>
-<script src="{% static 'script/article.js' %}"></script>
+
 {% endblock %}
+{% block js_block %}
+<script type="text/javascript" src="{% static 'script/article.js' %}"></script>
+    {% endblock %}
