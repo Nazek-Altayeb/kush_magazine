@@ -42,8 +42,7 @@ class CategoryForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('body','article',)
+        fields = ('body',)
         widget = {
             'body': forms.Textarea(attrs={'class': 'form-control'}),
-            'article': forms.HiddenInput(),
         }
