@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic.edit import FormMixin
 from .models import Article, Category
 from .forms import ArticleForm, EditArticleForm, CategoryForm, CommentForm
 from django.urls import reverse_lazy, reverse
@@ -19,7 +20,7 @@ class HomeView(ListView):
         return context
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(FormMixin, DetailView):
     model = Article
     form_class = CommentForm
     template_name = 'article.html'    
@@ -37,6 +38,18 @@ class ArticleDetailView(DetailView):
         context["liked"] = liked
 
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return super(Article, self).form_valid(form)
 
 
 class AddArticleView(CreateView):
