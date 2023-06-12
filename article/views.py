@@ -65,7 +65,7 @@ class ArticleDetailView(FormMixin, DetailView):
         else:
             comment_form = CommentForm()
 
-        return render(request, "article.html", {"comment_form": comment_form})
+        return render(request, "article.html", {"form": comment_form})
 
 
 class AddArticleView(CreateView):
