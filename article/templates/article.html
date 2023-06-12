@@ -58,7 +58,7 @@
             <small>By : {{user.username}}</small>
             <div class="form-group">
                 <form method="POST">
-                    {{ form}}
+                    {{form.as_p}}
                     {% csrf_token %}
                     <button class="btn btn-secondary" type="submit" name="article-id"
                         value="{{article.id}}">Add</button>
