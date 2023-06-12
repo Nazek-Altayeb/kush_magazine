@@ -50,22 +50,21 @@ class ArticleDetailView(FormMixin, DetailView):
             },
         )"""
 
-    def post(self, request, *args, **kwargs):
-
-        queryset = Article.objects.filter(status=1)
+    def post(self, request, pk, *args, **kwargs):
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
         comments = article.comments
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
-            comment_form.instance.user = request.user.username
             comment = comment_form.save(commit=False)
+            comment_form.instance.user = request.user
             comment.article = article
             comment.save()
         else:
             comment_form = CommentForm()
 
-        return render(request, "article.html", {"form": comment_form})
+        # return render(request, "article.html", {"form": comment_form, "article": article}, pk =request.POST.get('article-id'))
+        return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
 class AddArticleView(CreateView):
