@@ -40,8 +40,12 @@ class Comment(models.Model):
     article = models.ForeignKey("Article", related_name="comments", on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
    
+    class Meta:
+        ordering = ["date_and_time"]
+
     def __str__(self):
-        return '%s - %s' % (self.article.title, self.user)
+        return f"Comment {self.body} by {self.user}"
+
 
 """class Topic(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)

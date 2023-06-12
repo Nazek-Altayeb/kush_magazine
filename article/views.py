@@ -39,20 +39,33 @@ class ArticleDetailView(FormMixin, DetailView):
 
         return context
 
-    def get_success_url(self):
-        return HttpResponseRedirect(reverse('article', args=[str(pk)]))
+    def get(self, request, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        article = get_object_or_404(Article, id=request.POST.get('article-id'))
+        comments = article.comments
+
+        return render(request,"article.html", {"article": article,
+                "comments": comments,
+                "comment_form": CommentForm()
+            },
+        )
 
     def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        form = self.get_form()
-        if form.is_valid():
-            return self.form_valid(form)
-        else:
-            return self.form_invalid(form)
 
-    def form_valid(self, form):
-        form.save()
-        return super(Article, self).form_valid(form)
+        queryset = Article.objects.filter(status=1)
+        article = get_object_or_404(Article, id=request.POST.get('article-id'))
+        comments = article.comments.filter(approved=True)
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.user = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.article = article
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(request, "article.html", {"comment_form": comment_form})
 
 
 class AddArticleView(CreateView):
