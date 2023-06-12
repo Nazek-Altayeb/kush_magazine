@@ -40,7 +40,7 @@ class ArticleDetailView(FormMixin, DetailView):
         return context
 
     def get(self, request, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Article.objects.filter(status=1)
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
         comments = article.comments
 
@@ -54,7 +54,7 @@ class ArticleDetailView(FormMixin, DetailView):
 
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
-        comments = article.comments.filter(approved=True)
+        comments = article.comments
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():

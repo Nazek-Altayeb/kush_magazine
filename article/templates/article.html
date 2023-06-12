@@ -59,8 +59,9 @@
             <div class="form-group">
                 <form method="POST">
                     {{ comment_form | crispy }}
-                     {% csrf_token %}
-                    <button class="btn btn-secondary">Add</button>
+                    {% csrf_token %}
+                    <button class="btn btn-secondary" type="submit" name="article-id"
+                        value="{{article.id}}">Add</button>
                 </form>
             </div>
         </div>
