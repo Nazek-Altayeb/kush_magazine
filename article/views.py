@@ -40,7 +40,7 @@ class ArticleDetailView(FormMixin, DetailView):
         return context
 
     def get_success_url(self):
-        return reverse('article', kwargs={'pk': self.object.id})
+        return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
