@@ -36,6 +36,9 @@ class ArticleDetailView(FormMixin, DetailView):
             liked = True
         context["total_likes"] = total_likes
         context["liked"] = liked
+        comments = article.comments.order_by("-date_and_time")
+        context["comments"] = comments
+
 
         return context
 

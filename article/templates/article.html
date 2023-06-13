@@ -59,9 +59,9 @@
     {% endif %}
     <div class="row">
         <div class="col-md-5">
-            {% if article.comments.all %}
+            {% if comments %}
             <small> Comments</small>
-            {% for comment in article.comments.all %}
+            {% for comment in comments %}
             <div>
                 <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
                 <p>{{comment.body}}</p>
