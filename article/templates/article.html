@@ -21,7 +21,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div>
+            <button class="btn" id="add_comment" onclick="comment()"><i class="fa fa-comments"
+                    aria-hidden="true"></i></button>
+        </div>
+        <div>
             <form action="{% url 'like-article' article.pk %}" method="POST">
                 {% csrf_token %}
                 {% if user.is_authenticated %}
@@ -35,22 +39,8 @@
                 {{total_likes}}
                 {% endif %}
             </form>
-            <button class="btn" id="add_comment" onclick="comment()"><i class="fa fa-comments"
-                    aria-hidden="true"></i></button>
         </div>
-    </div>
-    <div class="row" style="display:none">
-        <div class="col-md-5">
-            {% if article.comments.all %}
-            <small> Comments</small>
-            {% for comment in article.comments.all %}
-            <div>
-                <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
-                <p>{{comment.body}}</p>
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div>
+
     </div>
     {% if user.is_authenticated %}
     <div class="row" id="comment_block" style="display: none;">
@@ -67,6 +57,20 @@
         </div>
     </div>
     {% endif %}
+    <div class="row">
+        <div class="col-md-5">
+            {% if article.comments.all %}
+            <small> Comments</small>
+            {% for comment in article.comments.all %}
+            <div>
+                <h5>{{comment.user.username}} - {{comment.date_and_time}}</h5>
+                <p>{{comment.body}}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
 </div>
 {% endblock %}
 
