@@ -1,39 +1,92 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Goal
 
-Welcome,
+Develop an online magazine where moderators could write articles of different topics,
+login users could write comments and like articles, where also guests would have the ability to read and search articles.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Target audience
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+- Readers who are interested in online magazines.
 
-## Codeanywhere Reminders
+# User Experience
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## User Stories
 
-`python3 -m http.server`
+1. As a website owner I want to:
+   - Manage access priviliges.
+2. As a Moderator I want to:
+   - Write, update and delete my own articles.
+3. As a user I want to:
+   - comment on articles, and like.
+   - I can search for an article.
+   - I can filter articles according to topics.
+   - Bookmark articles.
+4. As a guest I want to:
+   - Read articles.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## Colors
 
-`http_server`
+## Typography
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# System analysis / Use case diagram
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+![Use case duagram](/static/images/usecase-diagram.png)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# Database Design / ERD
 
-To log into the Heroku toolbelt CLI:
+![ERD](/static/images/ERD-diagram.png)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+# UX Plane
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Scope
 
----
+## Logic Path
 
-Happy coding!
+# Agile workflow
+
+With the use of GitHub's kanban board, issues have been listed with labels for each, prioritising them in a manner that meets the project objective.
+
+1. Adding essential features first
+   - Backend functionalities have been added as a first iteration (install required libraries, create database with related tables, CRUD functionalities).
+   - As a next step, templates and views that relate to CRUD have been done as a second iteration.
+   - authentication with allauth take a place as a third step after testing the CRUD.
+2. GitHub Features / Issues
+   - The user stories have been given a Github issue, each is prioritized and is a given one of three labels (Must have , Should have, Could have).
+     ![Issues](/static/images/issues.png).
+
+# Implementation Plan
+
+1.  Data layer
+    1. Create the following database tables as models in models.py (Article, User, Comment, Topic, Like)
+    2. Migrate to database
+2.  Back-end
+3.  Presentation layer
+
+# Existing Features
+
+1. CRUD articles
+2. Comment on article
+3. like an article
+4. filter articles
+5. search for article
+6. Bookmark an article
+7. Manage access piviliges
+
+# Testing
+
+# Fixed Bugs
+
+# Planned features
+
+# Deployment
+
+# Technologies
+
+- [Bootstrap 5](https://getbootstrap.com/) - Used inorder to make the website responsive.
+
+# Deployment
+
+# Credits
+
+# Aknowledgement
