@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<h1> Article </h1>
 
-<ul>
+
+<!--<ul>
     {% for article in object_list %}
     <li>
         <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
-        {% if user.id == article.author.id %} <a href="{% url 'category' article.category%}">{{article.category}}</a>
+        {% if user.id == article.author.id %}
+        <a href="{% url 'category' article.category%}">{{article.category}}</a>
         <a href="{% url 'edit-article' article.pk %}"> Edit</a>
         <a href="{% url 'delete-article' article.pk %}"> Delete</a>
         <br />
@@ -16,6 +17,34 @@
         {{article.body|slice:":200"}}
     </li>
     {% endfor %}
-</ul>
+</ul>-->
 
+
+<div class="container-fluid">
+    <h1> Articles </h1>
+    <div class="row">
+
+        {% for article in object_list %}
+        <div class="col-md-4">
+            <div class="card mb-4 border">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{% url 'article' article.pk %}">{{article.title}}</a></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">By: {{article.author.username}}</h6>
+                    <p class="card-text paragraph_border">{{article.body|slice:":200"}}</p>
+                    <small>Category:</small>
+                    <a href="{% url 'category' article.category%}" id="blue"> {{article.category}}</a>
+                    <br />
+                    {% if user.id == article.author.id %}
+
+                    <a href="{% url 'edit-article' article.pk %}" class="btn btn-primary"> Edit</a>
+                    <a href="{% url 'delete-article' article.pk %}" class="btn btn-danger"> Delete</a>
+                    <br />
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
 {% endblock %}

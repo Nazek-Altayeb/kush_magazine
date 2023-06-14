@@ -158,3 +158,23 @@ button {
 #green {
     color: green;
 }
+
+#blue {
+    color: blue;
+}
+
+.border {
+    box-shadow: 2px 2px lightgray;
+}
+
+.paragraph_border {
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+}
+
+.message_line_buttons {
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    clear: both;
+}
