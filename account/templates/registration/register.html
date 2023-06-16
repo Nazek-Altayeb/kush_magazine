@@ -4,16 +4,28 @@
 
 {% block content %}
 
-<h2> Register </h2>
-
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Register</button>
-
-    </form>
+<div class="container-fluid ">
+    <div class="container right">
+        <h1 class="article"> Register </h1>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 p-2">
+                <div class="card article_body mb-4 border">
+                    <div class="card-body">
+                        <h5 class="card-title no-style">{{article.title}}</h5>
+                        <div class="form-group">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="register-button">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 {% endblock %}

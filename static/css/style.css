@@ -222,3 +222,11 @@ button {
 .footer-color {
     background: rgb(241, 241, 230);
 }
+
+.login-button,
+.register-button {
+    background-color: rgb(184, 184, 147);
+    color: rgb(241, 241, 230);
+    border: 1px solid rgb(59, 57, 57);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
