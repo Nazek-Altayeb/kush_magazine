@@ -21,30 +21,38 @@
 
 
 <div class="container-fluid">
-    <h1> Articles </h1>
-    <div class="row">
-
-        {% for article in object_list %}
-        <div class="col-md-4">
-            <div class="card mb-4 border">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'article' article.pk %}">{{article.title}}</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">By: {{article.author.username}}</h6>
-                    <p class="card-text paragraph_border">{{article.body|slice:":200"}}</p>
-                    <small>Category:</small>
-                    <a href="{% url 'category' article.category%}" id="blue"> {{article.category}}</a>
-                    <br />
-                    {% if user.id == article.author.id %}
-
-                    <a href="{% url 'edit-article' article.pk %}" class="btn btn-primary"> Edit</a>
-                    <a href="{% url 'delete-article' article.pk %}" class="btn btn-danger"> Delete</a>
-                    <br />
-                    {% endif %}
+    <div class="container">
+        <h1 class="article"> Articles </h1>
+        <div class="row justify-content-center">
+            {% for article in object_list %}
+            <div class="col-12 col-sm-6 col-md-4 p-2">
+                <div class="card article_body mb-4 border">
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="no-style"
+                                href="{% url 'article' article.pk %}">{{article.title}}</a>
+                        </h5>
+                        <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
+                            {{article.author.username|capfirst}}</h6>
+                        <a class="right" href="{% url 'category' article.category%}" id="blue">
+                            {{article.category}}</a>
+                        <small class="category_and_author right">Category:</small>
+                        <p class="card-text mb-0 truncate">{{article.body}}</p>
+                        <a href="{% url 'article' article.pk %}">more</a>
+                        <br />
+                        <br />
+                        {% if user.id == article.author.id %}
+                        <a href="{% url 'edit-article' article.pk %}" class="btn btn-outline-primary btn-sm">
+                            Edit</a>
+                        <a href="{% url 'delete-article' article.pk %}" class="btn btn-outline-danger btn-sm">
+                            Delete</a>
+                        <br />
+                        {% endif %}
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-
     </div>
 </div>
+
 {% endblock %}
