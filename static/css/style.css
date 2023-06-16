@@ -224,9 +224,11 @@ button {
 }
 
 .login-button,
-.register-button {
-    background-color: rgb(184, 184, 147);
-    color: rgb(241, 241, 230);
+.register-button,
+.save-article-button {
+    color: rgb(184, 184, 147);
+    background-color: rgb(241, 241, 230);
     border: 1px solid rgb(59, 57, 57);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 0 8px 16px 0 rgb(184, 184, 147), 0 6px 20px 0 rgb(184, 184, 147);
 }

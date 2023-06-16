@@ -8,12 +8,14 @@
                 <div class="card article_body mb-4 border">
                     <div class="card-body">
                         <div class="row">
-                            <h5 class="card-title no-style">{{article.title}}</h5>
+                            <h5 class="card-title">{{article.title}}</h5>
                             <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                                 {{article.author.username|capfirst}}</h6>
                             <a class="right" href="{% url 'category' article.category%}" id="blue">
-                                {{article.category}}</a>
-                            <small class="category_and_author right">Category:</small>
+                                {{article.category}} </a>
+                            <small class="category_and_author right">Category : </small>
+                            <br />
+                            <br />
                             <p class="card-text ">{{article.body}}</p>
                             <br />
                             {% if user.is_authenticated %}

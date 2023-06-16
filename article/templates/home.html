@@ -34,8 +34,10 @@
                         <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                             {{article.author.username|capfirst}}</h6>
                         <a class="right" href="{% url 'category' article.category%}" id="blue">
-                            {{article.category}}</a>
-                        <small class="category_and_author right">Category:</small>
+                            {{article.category}} </a>
+                        <small class="category_and_author right">Category : </small>
+                        <br />
+                        <br />
                         <p class="card-text mb-0 truncate">{{article.body}}</p>
                         <a href="{% url 'article' article.pk %}">more</a>
                         <br />
