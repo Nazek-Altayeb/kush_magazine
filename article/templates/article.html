@@ -30,13 +30,6 @@
                         </div>
                         <div class="row">
                             <div class="col-1">
-                                <!--
-{% if user.is_authenticated %}
-                                <button class="btn" id="add_comment" onclick="comment()"><i class="fa fa-comments"
-                                        aria-hidden="true"></i></button>
-                                {% endif %}
-                               -->
-
                                 <!-- Button trigger modal -->
                                 {% if user.is_authenticated %}
                                 <button class="btn" id="add_comment" onclick="comment()" data-bs-toggle="modal"
@@ -44,8 +37,6 @@
                                     <i class="fa fa-comments" aria-hidden="true"></i>
                                 </button>
                                 {% endif %}
-
-
                             </div>
                             <div class="col-1">
                                 <form action="{% url 'like-article' article.pk %}" method="POST">
@@ -68,24 +59,6 @@
                 </div>
             </div>
         </div>
-        <!--
- {% if user.is_authenticated %}
-        <div class="row" id="comment_block" style="display: none;">
-            <div class="col-12">
-                <small>By : {{user.username}}</small>
-                <div class="form-group">
-                    <form method="POST">
-                        {{form.as_p}}
-                        {% csrf_token %}
-                        <button class="btn btn-secondary" type="submit" name="article-id"
-                            value="{{article.id}}">Add</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-       -->
-
         {% if user.is_authenticated %}
         <div class="row" id="comment_block" style="display: none;">
             <div class="col-12">
