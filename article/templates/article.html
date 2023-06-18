@@ -5,10 +5,10 @@
     <div class="container right">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card article_body mb-4 border">
+                <div class="card article_body mb-4">
                     <div class="card-body">
                         <div class="row">
-                            <h5 class="card-title">{{article.title}}</h5>
+                            <h5 class="card-title spicy-mustard">{{article.title}}</h5>
                             <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                                 {{article.author.username|capfirst}}</h6>
                             <a class="right" href="{% url 'category' article.category%}" id="blue">
@@ -124,16 +124,28 @@
 
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 p-2">
-                <div class="card comment-body">
+                <div class="card comment-card">
+                    <br />
+                    <h5 class="spicy-mustard">Comments</h5>
                     <div class="card-body">
                         {% if comments %}
                         {% for comment in comments %}
-                        <div class="row-bordered">
-                            <br />
-                            <small class="card-title mt-2">{{comment.user.username|capfirst}}</small>
-                            <p class="card-text">{{comment.body}}</p>
-                            <small>{{comment.date_and_time}}</small>
+                        <div class=" row">
+                            <div class="comment-body">
+                                <br />
+                                <div class="row">
+                                    <div class="col-2">
+                                        <small class="card-title mt-2 ">{{comment.user.username|capfirst}}</small>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="card-text">{{comment.body}}</p>
+                                        <br />
+                                    </div>
+                                </div>
+                                <small class="smaller">{{comment.date_and_time}}</small>
+                            </div>
                         </div>
+                        <br />
                         {% endfor %}
                         {% endif %}
                     </div>
@@ -142,8 +154,6 @@
         </div>
     </div>
 </div>
-
-
 
 <!--<div class="row">
         <div class="col-md-6">

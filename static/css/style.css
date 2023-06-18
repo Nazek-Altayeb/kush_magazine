@@ -203,15 +203,23 @@ button {
     padding: 1em;
     line-height: 1.5em;
     background: rgb(241, 241, 230);
-    border: solid 5px rgb(59, 57, 57);
 }
 
-.comment-body {
+.comment-card {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     padding: 0.3em;
     line-height: 1em;
     background: rgb(241, 241, 230);
-    /*border: solid 0.3px rgb(59, 57, 57);*/
+    /*border: solid 0.3px #897329;*/
+}
+
+.comment-body {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: solid 0.3px #897329;
+}
+
+.spicy-mustard {
+    color: #897329;
 }
 
 .category_and_author {
@@ -248,4 +256,8 @@ button {
     border-bottom: 1px solid #897329;
     margin: 0 15px;
     padding-bottom: 1em;
+}
+
+.smaller {
+    font-size: 0.7em;
 }
