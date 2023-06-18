@@ -206,6 +206,14 @@ button {
     border: solid 5px rgb(59, 57, 57);
 }
 
+.comment-body {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 0.3em;
+    line-height: 1em;
+    background: rgb(241, 241, 230);
+    /*border: solid 0.3px rgb(59, 57, 57);*/
+}
+
 .category_and_author {
     display: inline;
 }
@@ -225,10 +233,19 @@ button {
 
 .login-button,
 .register-button,
-.save-article-button {
+.save-article-button,
+.add-button {
     color: rgb(184, 184, 147);
     background-color: rgb(241, 241, 230);
     border: 1px solid rgb(59, 57, 57);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     box-shadow: 0 8px 16px 0 rgb(184, 184, 147), 0 6px 20px 0 rgb(184, 184, 147);
+}
+
+.row-bordered:after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #897329;
+    margin: 0 15px;
+    padding-bottom: 1em;
 }
