@@ -95,7 +95,7 @@ class AddTopicView(CreateView):
 
 
 def TopicView(request, tpc):
-    topic_articles = Article.objects.filter(category=tpc)
+    topic_articles = Article.objects.filter(topic=tpc)
     return render(request, 'topics.html', {'tpc': tpc.title(), 'topic_articles': topic_articles})
 
 

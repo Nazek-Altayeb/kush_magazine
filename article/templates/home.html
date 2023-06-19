@@ -3,23 +3,6 @@
 {% block content %}
 
 
-
-<!--<ul>
-    {% for article in object_list %}
-    <li>
-        <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
-        {% if user.id == article.author.id %}
-        <a href="{% url 'category' article.category%}">{{article.category}}</a>
-        <a href="{% url 'edit-article' article.pk %}"> Edit</a>
-        <a href="{% url 'delete-article' article.pk %}"> Delete</a>
-        <br />
-        {% endif %}
-        {{article.body|slice:":200"}}
-    </li>
-    {% endfor %}
-</ul>-->
-
-
 <div class="container-fluid">
     <div class="container">
         <h1 class="article"> Articles </h1>
@@ -33,9 +16,9 @@
                         </h5>
                         <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                             {{article.author.username|capfirst}}</h6>
-                        <a class="right" href="{% url 'category' article.category%}" id="blue">
-                            {{article.category}} </a>
-                        <small class="category_and_author right">Category : </small>
+                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                            {{article.topic}} </a>
+                        <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
                         <p class="card-text mb-0 truncate">{{article.body}}</p>
