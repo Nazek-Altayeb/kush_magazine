@@ -2,11 +2,11 @@
 
 {% block content %}
 
-{% if category_articles %}
-<h1> {{catg}} </h1>
+{% if topic_articles %}
+<h1> {{tpc}} </h1>
 
 <ul>
-    {% for article in category_articles %}
+    {% for article in topic_articles %}
     <li>
         <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
         {% if user.id == article.author.id %}
@@ -19,7 +19,7 @@
     {% endfor %}
 </ul>
 {% else %}
-<h2> No articles exist for this specific category...</h2>
+<h2> No articles exist for this specific topic...</h2>
 {% endif %}
 
 {% endblock %}

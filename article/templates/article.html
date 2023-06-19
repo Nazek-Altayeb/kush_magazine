@@ -11,8 +11,8 @@
                             <h5 class="card-title spicy-mustard">{{article.title}}</h5>
                             <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                                 {{article.author.username|capfirst}}</h6>
-                            <a class="right" href="{% url 'category' article.category%}" id="blue">
-                                {{article.category}} </a>
+                            <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                                {{article.topic}} </a>
                             <small class="category_and_author right">Category : </small>
                             <br />
                             <br />

@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views.generic.edit import FormMixin
-from .models import Article, Category
-from .forms import ArticleForm, EditArticleForm, CategoryForm, CommentForm
+from .models import Article, Topic
+from .forms import ArticleForm, EditArticleForm, TopicForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
@@ -14,9 +14,9 @@ class HomeView(ListView):
     template_name = 'home.html'
 
     def get_context_data(self, *args, **kwargs):
-        categories = Category.objects.all()
+        topics = Topic.objects.all()
         context = super(HomeView, self).get_context_data(*args, **kwargs)
-        context['categories'] = categories
+        context['topics'] = topics
         return context
 
 
@@ -88,15 +88,15 @@ class DeleteArticleView(DeleteView):
     success_url = reverse_lazy('home')
 
 
-class AddCategoryView(CreateView):
-    model = Category
-    form_class = CategoryForm
-    template_name = 'add-category.html'
+class AddTopicView(CreateView):
+    model = Topic
+    form_class = TopicForm
+    template_name = 'add-topic.html'
 
 
-def CategoryView(request, catg):
-    category_articles = Article.objects.filter(category=catg)
-    return render(request, 'categories.html', {'catg': catg.title(), 'category_articles': category_articles})
+def TopicView(request, tpc):
+    topic_articles = Article.objects.filter(category=tpc)
+    return render(request, 'topics.html', {'tpc': tpc.title(), 'topic_articles': topic_articles})
 
 
 def LikeView(request, pk):

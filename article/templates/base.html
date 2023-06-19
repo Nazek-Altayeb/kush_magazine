@@ -46,7 +46,7 @@
                         <a class="nav-link" href="{% url 'add-article' %}">Add an article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add-category' %}">Add Category</a>
+                        <a class="nav-link" href="{% url 'add-topic' %}">Add topic</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -59,16 +59,16 @@
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif %}
-                    {% if categories %}
+                    {% if topics %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Categories
+                            Topics
                         </a>
                         <div class="dropdown-menu">
 
-                            {% for category in categories %}
-                            <a class="dropdown-item" href="{% url 'category' category %}">{{category}}</a>
+                            {% for topic in topics %}
+                            <a class="dropdown-item" href="{% url 'topic' topic %}">{{topic}}</a>
                             {% endfor %}
 
                         </div>
