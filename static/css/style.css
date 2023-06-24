@@ -3,11 +3,11 @@ body {
 }
 
 
-.container {
-    /* margin: 2.5%;
-    padding: 2.5%;*/
+/*.container {
+     margin: 2.5%;
+    padding: 2.5%;
 
-}
+}*/
 
 
 .brand {
@@ -176,7 +176,8 @@ button {
 }
 
 .no-style {
-    text-decoration: none !important;
+    /* text-decoration: none !important;*/
+    text-decoration: none;
     text-transform: capitalize;
     color: #4a4a4f;
     font-family: Georgia, 'Times New Roman', Times, serif;

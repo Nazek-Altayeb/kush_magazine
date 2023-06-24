@@ -2,13 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
+from ckeditor.fields import RichTextField
+
 
 # Create your models here.
 
 
 class Article(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
-    body = models.CharField(max_length=1500, null=False, blank=False)
+    # body = models.CharField(max_length=1500, null=False, blank=False)
+    body = RichTextField(null=False, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.CharField(max_length=100, default='no-topic')
     likes = models.ManyToManyField(User, related_name='like_articles')
