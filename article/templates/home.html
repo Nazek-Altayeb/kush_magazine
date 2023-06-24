@@ -8,7 +8,7 @@
         <h1 class="article"> Articles </h1>
         <div class="row justify-content-center">
             {% for article in object_list %}
-            <div class="col-12 col-sm-6 col-md-4 p-2">
+            <div class="col-md-4 col-sm-8">
                 <div class="card article_body mb-4 border">
                     <div class="card-body">
                         <h5 class="card-title"><a class="no-style"
@@ -21,8 +21,7 @@
                         <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
-                        <p class="card-text mb-0 truncate">{{article.body}}</p>
-                        <a href="{% url 'article' article.pk %}">more</a>
+                        <p class="card-text mb-0 ">{{article.body|safe}}</p>
                         <br />
                         <br />
                         {% if user.id == article.author.id %}

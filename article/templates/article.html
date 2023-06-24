@@ -16,7 +16,7 @@
                             <small class="category_and_author right">Category : </small>
                             <br />
                             <br />
-                            <p class="card-text ">{{article.body}}</p>
+                            <p class="card-text ">{{article.body| safe}}</p>
                             <br />
                             {% if user.is_authenticated %}
                             {% if user.id == article.author.id %}
