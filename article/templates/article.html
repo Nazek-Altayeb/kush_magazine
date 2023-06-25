@@ -2,39 +2,58 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid ">
-    <div class="container right">
-        <div class="row">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-md-4 p-2">
                 <div class="card article_body mb-4">
                     <div class="card-body">
-                        <div class="row">
-                            <h5 class="card-title spicy-mustard">{{article.title}}</h5>
-                            <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
-                                {{article.author.username|capfirst}}</h6>
-                            <a class="right" href="{% url 'topic' article.topic%}" id="blue">
-                                {{article.topic}} </a>
-                            <small class="category_and_author right">Category : </small>
-                            <br />
-                            <br />
-                            <p class="card-text ">{{article.body| safe}}</p>
-                            <br />
+
+                        <h5 class="card-title spicy-mustard">{{article.title}}</h5>
+                        <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
+                            {{article.author.username|capfirst}}</h6>
+                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                            {{article.topic}} </a>
+                        <small class="category_and_author right">Category : </small>
+                        <br />
+                        <br />
+                        <p class="card-text ">{{article.body| safe}}</p>
+                        <br />
+                        <!-- add-comment button trigger modal -->
+                        {% if user.is_authenticated %}
+                        <button class="btn" id="add_comment" onclick="comment()" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <i class="fa fa-comments" aria-hidden="true"></i>
+                        </button>
+                        {% endif %}
+                        <!-- like button -->
+                        <form action="{% url 'like-article' article.pk %}" method="POST">
+                            {% csrf_token %}
                             {% if user.is_authenticated %}
-                            {% if user.id == article.author.id %}
-                            <a href="{% url 'edit-article' article.pk %}" class="btn btn-outline-primary btn-sm">
-                                Edit</a>
-                            <a href="{% url 'delete-article' article.pk %}" class="btn btn-outline-danger btn-sm">
-                                Delete</a>
-                            <!-- delete button trigger modal -->
-                            <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
-                                data-bs-target="#deleteArticle">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                            <br />
+                            {% if liked %}
+                            <button class="btn " id="green" type="submit" name="article-id" value="{{article.id}}"><i
+                                    class="fa-solid fa-thumbs-up fa-lg " aria-hidden="true">{{total_likes}}</i></button>
+                            {% else %}
+                            <button class="btn " type="submit" name="article-id" value="{{article.id}}"><i
+                                    class="far fa-thumbs-up fa-lg message_line_buttons"
+                                    aria-hidden="true">{{total_likes}}</i></button>
                             {% endif %}
                             {% endif %}
-                        </div>
+                        </form>
+                        <!-- edit-article button-->
+                        {% if user.is_authenticated %}
+                        {% if user.id == article.author.id %}
+                        <a href="{% url 'edit-article' article.pk %}" class="btn">
+                            <i class="far fa-edit"></i></a>
+
+                        <!-- delete-article button trigger modal -->
+                        <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
+                            data-bs-target="#deleteArticle">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        {% endif %}
+                        {% endif %}
                         <!-- delete Modal -->
-                        <div class="row" id="delete_block" style="display: none;">
+                        <div id="delete_block" style="display: none;">
                             <div class="col-12">
                                 <div class="modal fade" id="deleteArticle" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteArticleLabel"
@@ -69,75 +88,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <!-- add-comment button trigger modal -->
-                                {% if user.is_authenticated %}
-                                <button class="btn" id="add_comment" onclick="comment()" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">
-                                    <i class="fa fa-comments" aria-hidden="true"></i>
-                                </button>
-                                {% endif %}
-                            </div>
-                            <div class="col-1">
-                                <form action="{% url 'like-article' article.pk %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if user.is_authenticated %}
-                                    {% if liked %}
-                                    <button class="btn " id="green" type="submit" name="article-id"
-                                        value="{{article.id}}"><i class="fa-solid fa-thumbs-up fa-lg "
-                                            aria-hidden="true">{{total_likes}}</i></button>
-                                    {% else %}
-                                    <button class="btn " type="submit" name="article-id" value="{{article.id}}"><i
-                                            class="far fa-thumbs-up fa-lg message_line_buttons"
-                                            aria-hidden="true">{{total_likes}}</i></button>
-                                    {% endif %}
-                                    {% endif %}
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        {% if user.is_authenticated %}
-        <div class="row" id="comment_block" style="display: none;">
-            <div class="col-12">
-
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Add a comment</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <form method="POST">
-                                        {{form.as_p}}
-                                        {% csrf_token %}
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cancel and close</button>
-                                            <button class="btn btn-secondary" type="submit" name="article-id"
-                                                value="{{article.id}}">Add</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        {% if comments %}
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 p-2">
+                <br />
+                {% if comments %}
                 <div class="card comment-card">
                     <br />
                     <h5 class="spicy-mustard">Comments</h5>
@@ -152,7 +106,7 @@
                                         <small class="card-title mt-2 ">{{comment.user.username|capfirst}}</small>
                                     </div>
                                     <div class="col-10">
-                                        <p class="card-text">{{comment.body}}</p>
+                                        <p class="card-text">{{comment.body|safe}}</p>
                                         <br />
                                     </div>
                                 </div>
@@ -161,16 +115,48 @@
                         </div>
                         <br />
                         {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
 
+
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div id="comment_block" style="display: none;">
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Add a comment</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <form method="POST">
+                                    {{form.media}}
+                                    {{form.as_p}}
+                                    {% csrf_token %}
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
+                                            and close</button>
+                                        <button class="btn btn-secondary" type="submit" name="article-id"
+                                            value="{{article.id}}">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         {% endif %}
+
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block js_block %}

@@ -26,9 +26,7 @@ class ArticleDetailView(FormMixin, DetailView):
     template_name = 'article.html'    
 
     def get_context_data(self, *args, **kwargs):
-        # categories = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
-        # context['categories'] = categories
         article = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = article.total_likes()
         liked = False

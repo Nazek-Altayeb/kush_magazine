@@ -22,12 +22,9 @@
                         <br />
                         <p class="card-text mb-0 ">{{article.body|safe}}</p>
                         <br />
-                        <br />
                         {% if user.id == article.author.id %}
-                        <a href="{% url 'edit-article' article.pk %}" class="btn btn-outline-primary btn-sm">
-                            Edit</a>
-                        <a href="{% url 'delete-article' article.pk %}" class="btn btn-outline-danger btn-sm">
-                            Delete</a>
+                        <a href="{% url 'edit-article' article.pk %}" class="btn">
+                            <i class="far fa-edit"></i></a>
                         <!-- delete button trigger modal -->
                         <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
                             data-bs-target="#deleteArticle">
