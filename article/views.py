@@ -42,16 +42,6 @@ class ArticleDetailView(FormMixin, DetailView):
 
         return context
 
-    """def get(self, request, *args, **kwargs):
-        queryset = Article.objects.filter(status=1)
-        article = get_object_or_404(Article, id=request.POST.get('article-id'))
-        comments = article.comments
-
-        return render(request,"article.html", {"article": article,
-                "comments": comments,
-                "comment_form": CommentForm()
-            },
-        )"""
 
     def post(self, request, pk, *args, **kwargs):
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
@@ -66,7 +56,6 @@ class ArticleDetailView(FormMixin, DetailView):
         else:
             comment_form = CommentForm()
 
-        # return render(request, "article.html", {"form": comment_form, "article": article}, pk =request.POST.get('article-id'))
         return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
@@ -109,5 +98,11 @@ def LikeView(request, pk):
         article.likes.add(request.user)
         liked = True
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
+
+
+def DeleteView(request, pk):
+    article = get_object_or_404(Article, id=request.POST.get('article-id'))
+    article.delete()
+    return HttpResponseRedirect(reverse('home'))
 
 
