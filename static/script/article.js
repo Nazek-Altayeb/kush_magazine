@@ -3,7 +3,7 @@ function comment() {
     comment_block.style.display = "block";
 }
 
-function confirm() {
+function delete_article() {
     delete_block = document.getElementById("delete_block");
     delete_block.style.display = "block";
 }

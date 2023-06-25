@@ -24,8 +24,8 @@
                                 Edit</a>
                             <a href="{% url 'delete-article' article.pk %}" class="btn btn-outline-danger btn-sm">
                                 Delete</a>
-                            <!-- Button trigger modal -->
-                            <button class="btn" id="delete_article" onclick="confirm()" data-bs-toggle="modal"
+                            <!-- delete button trigger modal -->
+                            <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
                                 data-bs-target="#deleteArticle">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="row">
                             <div class="col-1">
-                                <!-- Button trigger modal -->
+                                <!-- add-comment button trigger modal -->
                                 {% if user.is_authenticated %}
                                 <button class="btn" id="add_comment" onclick="comment()" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop">
@@ -169,24 +169,6 @@
         {% endif %}
     </div>
 </div>
-
-<!--<div class="row">
-        <div class="col-md-6">
-            <h2>{{article.title}}</h2>
-            <small> {{article.author.username}} - </small>
-            {% if user.is_authenticated %}
-            {% if user.id == article.author.id %}
-            <a href="{% url 'edit-article' article.pk %}"> Edit</a>
-            <a href="{% url 'delete-article' article.pk %}"> Delete</a>
-            {% endif %}
-            {% endif%}
-            <br />
-            <hr />
-            {{article.body}}
-            <br />
-            <a href="{% url 'home' %}">Back</a>
-        </div>
-    </div>-->
 
 
 {% endblock %}

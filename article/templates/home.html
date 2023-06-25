@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-
 
 <div class="container-fluid">
     <div class="container">
@@ -29,14 +28,60 @@
                             Edit</a>
                         <a href="{% url 'delete-article' article.pk %}" class="btn btn-outline-danger btn-sm">
                             Delete</a>
+                        <!-- delete button trigger modal -->
+                        <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
+                            data-bs-target="#deleteArticle">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        <!-- delete Modal -->
+                        <div class="row" id="delete_block" style="display: none;">
+                            <div class="col-12">
+                                <div class="modal fade" id="deleteArticle" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteArticleLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteArticleLabel">Delete an article</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <form action="{% url 'delete' article.pk %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <strong> Please note that the deletion action could not be undo
+                                                            <br /> you sure you want to delete
+                                                            this article</strong>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel and
+                                                                close</button>
+                                                            <button class="btn btn-secondary" type="submit"
+                                                                name="article-id" value="{{article.id}}">delete</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <br />
                         {% endif %}
                     </div>
                 </div>
             </div>
             {% endfor %}
+
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+{% block js_block %}
+<script type="text/javascript" src="{% static 'script/article.js' %}"></script>
 {% endblock %}
