@@ -18,7 +18,7 @@
                         <br />
                         <p class="card-text ">{{article.body| safe}}</p>
                         <br />
-                        <!-- add-comment button trigger modal -->
+                        <!-- add-comment trigger modal -->
                         {% if user.is_authenticated %}
                         <button class="btn" id="add_comment" onclick="comment()" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
@@ -36,6 +36,18 @@
                             <button class="btn " type="submit" name="article-id" value="{{article.id}}"><i
                                     class="far fa-thumbs-up fa-lg message_line_buttons"
                                     aria-hidden="true">{{total_likes}}</i></button>
+                            {% endif %}
+                            {% endif %}
+                        </form>
+                        <form action="{% url 'bookmark-article' article.pk %}" method="POST">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                            {% if favourite %}
+                            <button class="btn " id="green" type="submit" name="article-id" value="{{article.id}}"><i
+                                    class="fa-solid fa-bookmark fa-lg" aria-hidden="true"></i></button>
+                            {% else %}
+                            <button class="btn " type="submit" name="article-id" value="{{article.id}}"><i
+                                    class="far fa-bookmark fa-lg message_line_buttons" aria-hidden="true"></i></button>
                             {% endif %}
                             {% endif %}
                         </form>

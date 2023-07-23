@@ -23,23 +23,26 @@ class HomeView(ListView):
 class ArticleDetailView(FormMixin, DetailView):
     model = Article
     form_class = CommentForm
-    template_name = 'article.html'    
+    template_name = 'article.html'
 
     def get_context_data(self, *args, **kwargs):
-        context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
+        context = super(ArticleDetailView, self).get_context_data(
+            *args, **kwargs)
         article = get_object_or_404(Article, id=self.kwargs['pk'])
         total_likes = article.total_likes()
         liked = False
+        favourite = False
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
         context["total_likes"] = total_likes
         context["liked"] = liked
+        if article.favourites.filter(id=self.request.user.id).exists():
+            favourite = True
+        context["favourite"] = favourite
         comments = article.comments.order_by("-date_and_time")
         context["comments"] = comments
 
-
         return context
-
 
     def post(self, request, pk, *args, **kwargs):
         article = get_object_or_404(Article, id=request.POST.get('article-id'))
@@ -98,9 +101,19 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
+def BookmarkView(request, pk):
+    article = get_object_or_404(Article, id=request.POST.get('article-id'))
+    favourite = False
+    if article.favourites.filter(id=request.user.id).exists():
+        article.favourites.remove(request.user)
+        favourite = False
+    else:
+        article.favourites.add(request.user)
+        favourite = True
+    return HttpResponseRedirect(reverse('article', args=[str(pk)]))
+
+
 def DeleteView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     article.delete()
     return HttpResponseRedirect(reverse('home'))
-
-

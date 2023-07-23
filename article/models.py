@@ -14,6 +14,8 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.CharField(max_length=100, default='no-topic')
     likes = models.ManyToManyField(User, related_name='like_articles')
+    favourites = models.ManyToManyField(
+        User, related_name='favourite_articles')
 
     def __str__(self):
         return self.title + '|' + str(self.author)
