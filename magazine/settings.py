@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['kush-online-magazine.herokuapp.com', 'localhost',
                  '8000-nazek-altayeb-kush-magaz-0o4r7gme7d.us2.codeanyapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-nazek-altayeb-kush-magaz-713fsmh5dk.us2.codeanyapp.com"]
+    "https://8000-nazek-altayeb-kush-magaz-0o4r7gme7d.us2.codeanyapp.com"]
 
 # Application definition
 

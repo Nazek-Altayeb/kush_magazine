@@ -60,6 +60,15 @@ class ArticleDetailView(FormMixin, DetailView):
         return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
+def SearchArticleView(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        articles = Article.objects.filter(title__contains=searched)
+        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
+    else:
+        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
+
+
 class AddArticleView(CreateView):
     model = Article
     form_class = ArticleForm
