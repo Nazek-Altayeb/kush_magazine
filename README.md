@@ -12,16 +12,19 @@ login users could write comments and like articles, where also guests would have
 ## User Stories
 
 1. As a website owner I want to:
+   - Create a database.
    - Manage access priviliges.
 2. As a Moderator I want to:
    - Write, update and delete my own articles.
-3. As a user I want to:
-   - comment on articles, and like.
-   - I can search for an article.
-   - I can filter articles according to topics.
+3. As a user I can:
+   - comment on articles. 
+   - Like articles.
+   - Search for an article.
+   - Filter articles according to topics.
    - Bookmark articles.
 4. As a guest I want to:
    - Read articles.
+   - Search for an article.
 
 ## Design
 
@@ -56,12 +59,8 @@ With the use of GitHub's kanban board, issues have been listed with labels for e
      ![Issues](/static/images/issues.png).
 
 # Implementation Plan
-
-1.  Data layer
-    1. Create the following database tables as models in models.py (Article, User, Comment, Topic, Like)
-    2. Migrate to database
-2.  Back-end
-3.  Presentation layer
+The implementation plan have been written for each [user story](#user-stories) individually, 
+available at the [backlog](https://github.com/users/Nazek-Altayeb/projects/3).
 
 # Existing Features
 
@@ -75,11 +74,16 @@ With the use of GitHub's kanban board, issues have been listed with labels for e
 
 # Testing
 
+## Test Guide
+Manual test is applied at all user stories,  available at the following [acceptance criteria guide](TEST.md).
+
 # Fixed Bugs
 
 # Planned features
-
-# Deployment
+User profile: 
+- Contains Articles that have been saved by the user.
+- Ability to edit personal info.
+- User can change password and image. 
 
 # Technologies
 
