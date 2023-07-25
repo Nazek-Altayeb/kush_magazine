@@ -61,6 +61,7 @@ With the use of GitHub's kanban board, issues have been listed with labels for e
 # Implementation Plan
 The implementation plan have been written for each [user story](#user-stories) individually, 
 available at the [backlog](https://github.com/users/Nazek-Altayeb/projects/3).
+By clicking on each user story, details of how the feature is implemented will be displayed.
 
 # Existing Features
 
