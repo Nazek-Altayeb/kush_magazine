@@ -2,6 +2,7 @@ from django.views import generic
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from article.models import Article
 
 
 class RegisterView(generic.CreateView):
@@ -10,4 +11,8 @@ class RegisterView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
+def ProfileView(request):
+    user_articles = Article.objects.filter(author=request.user)
+    bookmarked_articles = Article.objects.filter(favourites__in=[request.user])
+    return render(request, 'profile.html', {'user_articles': user_articles, 'bookmarked_articles': bookmarked_articles})
 # Create your views here.

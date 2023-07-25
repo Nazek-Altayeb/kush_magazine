@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user_articles %}
+<h1> User Articles</h1>
+
+<ul>
+    {% for article in user_articles %}
+    <li>
+        <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
+        {% if user.id == article.author.id %}
+        <a href="{% url 'edit-article' article.pk %}"> Edit</a>
+        <a href="{% url 'delete-article' article.pk %}"> Delete</a>
+        <br />
+        {% endif %}
+        {{article.body|slice:":200"}}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2> No articles exist for this user...</h2>
+{% endif %}
+
+{% if bookmarked_articles %}
+<h1> Bookmarked Articles</h1>
+
+<ul>
+    {% for article in bookmarked_articles %}
+    <li>
+        <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
+        {{article.body|slice:":200"}}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2> No articles bookmarked...</h2>
+{% endif %}
+{% endblock %}
