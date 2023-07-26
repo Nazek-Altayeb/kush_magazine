@@ -20,13 +20,13 @@
                         <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
-                        <p class="card-text mb-0 ">{{article.body|safe}}</p>
+                        <p class="card-text mb-0 truncate">{{article.body | safe}}<a class="read-more-style"
+                                href="{% url 'article' article.pk %}"> read more</a></span></p>
                         <br />
                     </div>
                 </div>
             </div>
             {% endfor %}
-
         </div>
     </div>
 </div>
