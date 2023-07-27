@@ -5,8 +5,7 @@ from .models import Article, Topic
 from .forms import ArticleForm, EditArticleForm, TopicForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
-
-# Create your views here.
+from django.utils import html
 
 
 class HomeView(ListView):
@@ -29,6 +28,7 @@ class ArticleDetailView(FormMixin, DetailView):
         context = super(ArticleDetailView, self).get_context_data(
             *args, **kwargs)
         article = get_object_or_404(Article, id=self.kwargs['pk'])
+        context["article.body"] = article.body
         total_likes = article.total_likes()
         liked = False
         favourite = False

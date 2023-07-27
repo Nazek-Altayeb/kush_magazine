@@ -30,20 +30,39 @@ body {
     background-color: transparent;
 }
 
-.display-less-text {
+/*.display-less-text {
     --max-lines: 3;
     --line-height: 1.4;
     max-height: calc(var(--max-lines) * 1em * var(--line-height));
     overflow: hidden;
-}
+}*/
 
-.truncate {
+/*.truncate {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
+}*/
+
+/*.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}*/
+
+.card-body>p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-body>h7 {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .author {
