@@ -1,39 +1,167 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-{% if user_articles %}
-<h1> User Articles</h1>
 
-<ul>
-    {% for article in user_articles %}
-    <li>
-        <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
-        {% if user.id == article.author.id %}
-        <a href="{% url 'edit-article' article.pk %}"> Edit</a>
-        <a href="{% url 'delete-article' article.pk %}"> Delete</a>
-        <br />
+
+<div class="container-fluid">
+    <div class="container">
+        {% if user_articles %}
+        <h2 class="article">Hi, {{user_name|capfirst}} !</h2>
+        <h3 class="article"> Written Articles</h3>
+        <div class="row justify-content-center">
+            {% for article in user_articles %}
+            <div class="col-md-4 col-sm-8">
+                <div class="card article_body mb-4 border">
+                    <div class="card-body">
+
+                        <h5 class="card-title spicy-mustard">{{article.title}}</h5>
+                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                            {{article.topic}} </a>
+                        <small class="category_and_author right">Category : </small>
+                        <br />
+                        <br />
+                        <h7 class="card-text ">{{article.body| safe}}</h7>
+                        <br />
+                        <!-- edit-article button-->
+                        {% if user.is_authenticated %}
+                        {% if user.id == article.author.id %}
+                        <a href="{% url 'edit-article' article.pk %}" class="btn">
+                            <i class="far fa-edit"></i></a>
+
+                        <!-- delete-article button trigger modal -->
+                        <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
+                            data-bs-target="#deleteArticle">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        {% endif %}
+                        {% endif %}
+                        <!-- delete Modal -->
+                        <div id="delete_block" style="display: none;">
+                            <div class="col-12">
+                                <div class="modal fade" id="deleteArticle" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteArticleLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteArticleLabel">Delete an article
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <form action="{% url 'delete' article.pk %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <strong> Please note that the deletion action could not be
+                                                            undo
+                                                            <br /> you sure you want to delete
+                                                            this article</strong>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel
+                                                                and
+                                                                close</button>
+                                                            <button class="btn btn-secondary" type="submit"
+                                                                name="article-id" value="{{article.id}}">delete</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h3 class="article"> No articles exist for this user...</h3>
         {% endif %}
-        {{article.body|slice:":200"}}
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<h2> No articles exist for this user...</h2>
-{% endif %}
+        <br />
+        {% if bookmarked_articles %}
+        <h3 class="article"> Bookmarked Articles</h3>
+        <div class="row justify-content-center">
+            {% for article in bookmarked_articles %}
+            <div class="col-md-4 col-sm-8">
+                <div class="card article_body mb-4 border">
+                    <div class="card-body">
 
-{% if bookmarked_articles %}
-<h1> Bookmarked Articles</h1>
+                        <h5 class="card-title spicy-mustard">{{article.title}}</h5>
+                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                            {{article.topic}} </a>
+                        <small class="category_and_author right">Category : </small>
+                        <br />
+                        <br />
+                        <h7 class="card-text ">{{article.body| safe}}</h7>
+                        <br />
+                        <!-- edit-article button-->
+                        {% if user.is_authenticated %}
+                        {% if user.id == article.author.id %}
+                        <a href="{% url 'edit-article' article.pk %}" class="btn">
+                            <i class="far fa-edit"></i></a>
 
-<ul>
-    {% for article in bookmarked_articles %}
-    <li>
-        <a href="{% url 'article' article.pk %}">{{article.title}}</a> - {{article.author.username}}
-        {{article.body|slice:":200"}}
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<h2> No articles bookmarked...</h2>
-{% endif %}
+                        <!-- delete-article button trigger modal -->
+                        <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
+                            data-bs-target="#deleteArticle">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        {% endif %}
+                        {% endif %}
+                        <!-- delete Modal -->
+                        <div id="delete_block" style="display: none;">
+                            <div class="col-12">
+                                <div class="modal fade" id="deleteArticle" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteArticleLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteArticleLabel">Delete an article
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <form action="{% url 'delete' article.pk %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <strong> Please note that the deletion action could not be
+                                                            undo
+                                                            <br /> you sure you want to delete
+                                                            this article</strong>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel
+                                                                and
+                                                                close</button>
+                                                            <button class="btn btn-secondary" type="submit"
+                                                                name="article-id" value="{{article.id}}">delete</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h2 class="article"> No articles bookmarked...</h2>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js_block %}
+<script type="text/javascript" src="{% static 'script/article.js' %}"></script>
 {% endblock %}
