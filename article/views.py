@@ -75,6 +75,7 @@ class AddArticleView(CreateView):
     form_class = ArticleForm
     template_name = 'add-article.html'
 
+    # Source: https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
     def form_valid(self, form):
         form.instance.author = self.request.user
         msg = "Your article was created successfully"
@@ -86,6 +87,13 @@ class UpdateArticleView(UpdateView):
     model = Article
     form_class = EditArticleForm
     template_name = 'update-article.html'
+
+    # Source: https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        msg = "Your article has been updated successfully"
+        messages.add_message(self.request, messages.SUCCESS, msg)
+        return super(UpdateView, self).form_valid(form)
 
 
 class DeleteArticleView(DeleteView):
@@ -132,4 +140,6 @@ def BookmarkView(request, pk):
 def DeleteView(request, pk):
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     article.delete()
+    msg = "Your article has been deleted"
+    messages.add_message(request, messages.SUCCESS, msg)
     return HttpResponseRedirect(reverse('home'))
