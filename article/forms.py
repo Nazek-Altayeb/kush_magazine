@@ -2,11 +2,12 @@ from django import forms
 from .models import Article, Comment, Topic
 
 
-topics = Topic.objects.all().values_list('name', 'name')
-topics_list = []
-for topic in topics:
-    topics_list.append(topic)
-
+if Topic.objects.all():
+    topics = Topic.objects.all().values_list('name', 'name')
+    topics_list = []
+    for topic in topics:
+        topics_list.append(topic)
+    
 
 class ArticleForm(forms.ModelForm):
     class Meta:
