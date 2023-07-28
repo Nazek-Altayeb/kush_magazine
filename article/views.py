@@ -6,6 +6,7 @@ from .forms import ArticleForm, EditArticleForm, TopicForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.utils import html
+from django.contrib import messages
 
 
 class HomeView(ListView):
@@ -73,6 +74,12 @@ class AddArticleView(CreateView):
     model = Article
     form_class = ArticleForm
     template_name = 'add-article.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        msg = "Your article was created successfully"
+        messages.add_message(self.request, messages.SUCCESS, msg)
+        return super(CreateView, self).form_valid(form)
 
 
 class UpdateArticleView(UpdateView):
