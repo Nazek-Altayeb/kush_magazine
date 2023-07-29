@@ -82,7 +82,7 @@
                 </ul>
                 <form class="d-flex" role="search" method="POST" action="{% url 'search-article' %}">
                     {% csrf_token %}
-                    <input class="form-control me-2" type="search" placeholder="article title, topic" name="searched"
+                    <input class="form-control me-2" type="search" placeholder="author, topic" name="searched"
                         aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </form>

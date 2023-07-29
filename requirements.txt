@@ -15,6 +15,7 @@ postgres==4.0
 psycopg2==2.9.6
 psycopg2-binary==2.9.6
 psycopg2-pool==1.1
+q==2.7
 sqlparse==0.4.4
 urllib3==1.26.16
 yapf==0.33.0
