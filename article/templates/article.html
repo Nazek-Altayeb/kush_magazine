@@ -4,7 +4,7 @@
 <div class="container-fluid ">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 col-md-4 p-2">
+            <div class="col-md-10 col-sm-6 p-2">
                 <div class="card article_body mb-4">
                     <div class="card-body">
 
@@ -13,7 +13,7 @@
                             {{article.author.username|capfirst}}</h6>
                         <a class="right" href="{% url 'topic' article.topic%}" id="blue">
                             {{article.topic}} </a>
-                        <small class="category_and_author right">Category : </small>
+                        <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
                         <h7 class="card-text ">{{article.body| safe}}</h7>
@@ -130,8 +130,6 @@
                     </div>
                 </div>
                 {% endif %}
-
-
             </div>
         </div>
 
@@ -153,7 +151,7 @@
                                     {{form.as_p}}
                                     {% csrf_token %}
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel
                                             and close</button>
                                         <button class="btn btn-secondary" type="submit" name="article-id"
                                             value="{{article.id}}">Add</button>

@@ -8,10 +8,9 @@
         <h1 class="article">{{tpc}} </h1>
         <div class="row justify-content-center">
             {% for article in topic_articles %}
-            <div class="col-md-4 col-sm-8">
+            <div class="col-md-10 col-sm-6 p-2">
                 <div class="card article_body mb-4 border">
                     <div class="card-body">
-
                         <h5 class="card-title spicy-mustard">{{article.title}}</h5>
                         <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                             {{article.author.username|capfirst}}</h6>
@@ -19,57 +18,6 @@
                         <br />
                         <h7 class="card-text ">{{article.body| safe}}</h7>
                         <br />
-                        <!-- edit-article button-->
-                        {% if user.is_authenticated %}
-                        {% if user.id == article.author.id %}
-                        <a href="{% url 'edit-article' article.pk %}" class="btn">
-                            <i class="far fa-edit"></i></a>
-
-                        <!-- delete-article button trigger modal -->
-                        <button class="btn" id="delete_article" onclick="delete_article()" data-bs-toggle="modal"
-                            data-bs-target="#deleteArticle">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                        {% endif %}
-                        {% endif %}
-                        <!-- delete Modal -->
-                        <div id="delete_block" style="display: none;">
-                            <div class="col-12">
-                                <div class="modal fade" id="deleteArticle" data-bs-backdrop="static"
-                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteArticleLabel"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="deleteArticleLabel">Delete an article
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <form action="{% url 'delete' article.pk %}" method="POST">
-                                                        {% csrf_token %}
-                                                        <strong> Please note that the deletion action could not be
-                                                            undo
-                                                            <br /> you sure you want to delete
-                                                            this article</strong>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Cancel
-                                                                and
-                                                                close</button>
-                                                            <button class="btn btn-secondary" type="submit"
-                                                                name="article-id" value="{{article.id}}">delete</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
