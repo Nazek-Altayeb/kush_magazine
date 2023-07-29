@@ -81,14 +81,14 @@
                                                 <div class="form-group">
                                                     <form action="{% url 'delete' article.pk %}" method="POST">
                                                         {% csrf_token %}
-                                                        <strong> Please note that the deletion action could not be undo
-                                                            <br /> you sure you want to delete
-                                                            this article</strong>
+                                                        <strong> Please note that the deletion action could not be undo,
+                                                            <br />Are you sure you want to delete
+                                                            this article ?</strong>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Cancel and
                                                                 close</button>
-                                                            <button class="btn btn-secondary" type="submit"
+                                                            <button class="btn btn-danger" type="submit"
                                                                 name="article-id" value="{{article.id}}">delete</button>
                                                         </div>
                                                     </form>
@@ -114,10 +114,11 @@
                             <div class="comment-body">
                                 <br />
                                 <div class="row">
-                                    <div class="col-2">
-                                        <small class="card-title mt-2 ">{{comment.user.username|capfirst}}</small>
+                                    <div class="col-md-2 col-sm-4  vertical-border">
+                                        <small
+                                            class="card-title mt-2 spicy-mustard">{{comment.user.username|capfirst}}</small>
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-md-8 col-sm-6 ">
                                         <p class="card-text">{{comment.body|safe}}</p>
                                         <br />
                                     </div>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-sm-6 p-2">
+
+                <div class="article">
+                    <p>
+                        Page not found.<br>
+                        it's possibly you're lost.<br>
+                        click on the link below.
+                    </p>
+                </div>
+                <a href="{% url 'home' %}" class="back-btn">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
