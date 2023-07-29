@@ -7,6 +7,7 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.utils import html
 from django.contrib import messages
+from django.db.models import Q
 
 
 class HomeView(ListView):
@@ -59,15 +60,6 @@ class ArticleDetailView(FormMixin, DetailView):
             comment_form = CommentForm()
 
         return HttpResponseRedirect(reverse('article', args=[str(pk)]))
-
-
-def SearchArticleView(request):
-    if request.method == "POST":
-        searched = request.POST['searched']
-        articles = Article.objects.filter(title__contains=searched)
-        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
-    else:
-        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
 
 
 class AddArticleView(CreateView):
@@ -135,6 +127,18 @@ def BookmarkView(request, pk):
         article.favourites.add(request.user)
         favourite = True
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
+
+
+def SearchArticleView(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        query = Q(Q(title__contains=searched) |
+                  Q(topic__contains=searched))
+        articles = Article.objects.filter(query)
+        """articles = Article.objects.filter(title__contains=searched)"""
+        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
+    else:
+        return HttpResponseRedirect(reverse('home'))
 
 
 def DeleteView(request, pk):
