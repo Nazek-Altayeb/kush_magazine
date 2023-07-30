@@ -24,14 +24,12 @@
     - [models](#models)
   - [Account](#account)
     - [views](#views-1)
+  - [Magazine](#magazine)
+    - [settings](#settings)
 - [Accessibility axe DevTools Chrome Extension](#accessibility-axe-devtools-chrome-extension)
 - [Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)](#performance-accessibility-seo-best-practices-lighthouse-chrome-devtools)
 - [Browser Testing](#browser-testing)
  
-
-
-
-
 # HTML [W3C validator](https://validator.w3.org/)
   ## Home
   ## Base
@@ -49,17 +47,27 @@ The validation result for the style.css comes with no errors.
 
 # JavaScript [JSHint](https://jshint.com/)
 1 undefined variable: bootstrap.
-Referring to line 16 in base.html ``let alert = new bootstrap.Alert(messages);``
+Referring to line 16 in article.js ``let alert = new bootstrap.Alert(messages);``
 
 ![jshint result](https://res.cloudinary.com/nazek/image/upload/v1690722422/readme/js-script-result.png)
 
 # Python [CI Python Linter](https://pep8ci.herokuapp.com/)
+python files have been verified with the above validator, below are some results. The rest of python files have similar results.
 ## Article
   ### views
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-views.png)
   ### forms
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-forms.png)
   ### models
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-models.png)
+  ### urls
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-urls.png)
 ## Account
   ### views
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-account-views.png)
+## Magazine
+  ### settings
+  ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-setting.png)
 
 # Accessibility [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 

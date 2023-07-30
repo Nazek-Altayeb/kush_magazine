@@ -13,10 +13,18 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ('title', 'author', 'topic', 'body', )
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'required': 'True'}),
-            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '',  'id': 'user-id', 'type': 'hidden'}),
-            'topic': forms.Select(choices=topics_list, attrs={'class': 'form-control'}),
-            'body': forms.Textarea(attrs={'class': 'form-control', 'required': 'True'}),
+            'title': forms.TextInput(
+                attrs={'class': 'form-control', 'required': 'True'}),
+            'author': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'value': '',
+                    'id': 'user-id',
+                    'type': 'hidden'}),
+            'topic': forms.Select(
+                choices=topics_list, attrs={'class': 'form-control'}),
+            'body': forms.Textarea(
+                attrs={'class': 'form-control', 'required': 'True'}),
         }
 
 

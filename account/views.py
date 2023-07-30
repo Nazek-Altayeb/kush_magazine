@@ -15,4 +15,8 @@ def ProfileView(request):
     user_articles = Article.objects.filter(author=request.user)
     user_name = request.user
     bookmarked_articles = Article.objects.filter(favourites__in=[request.user])
-    return render(request, 'profile.html', {'user_articles': user_articles, 'bookmarked_articles': bookmarked_articles, 'user_name': user_name})
+    return render(
+        request, 'profile.html', {
+            'user_articles': user_articles,
+            'bookmarked_articles': bookmarked_articles,
+            'user_name': user_name})

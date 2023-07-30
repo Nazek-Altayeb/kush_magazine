@@ -1,5 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView)
 from django.views.generic.edit import FormMixin
 from .models import Article, Topic
 from .forms import ArticleForm, EditArticleForm, TopicForm, CommentForm
@@ -67,7 +72,8 @@ class AddArticleView(CreateView):
     form_class = ArticleForm
     template_name = 'add-article.html'
 
-    # Source: https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
+    # Source:
+    # https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
     def form_valid(self, form):
         form.instance.author = self.request.user
         msg = "Your article was created successfully"
@@ -80,7 +86,8 @@ class UpdateArticleView(UpdateView):
     form_class = EditArticleForm
     template_name = 'update-article.html'
 
-    # Source: https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
+    # Source:
+    # https://github.com/Kathrin-ddggxh/woohoo-haiku/blob/main/haikus/views.py
     def form_valid(self, form):
         form.instance.author = self.request.user
         msg = "Your article has been updated successfully"
@@ -102,7 +109,9 @@ class AddTopicView(CreateView):
 
 def TopicView(request, tpc):
     topic_articles = Article.objects.filter(topic=tpc)
-    return render(request, 'topics.html', {'tpc': tpc.title(), 'topic_articles': topic_articles})
+    return render(
+        request, 'topics.html', {
+            'tpc': tpc.title(), 'topic_articles': topic_articles})
 
 
 def LikeView(request, pk):
@@ -136,7 +145,8 @@ def SearchArticleView(request):
                   Q(topic__contains=searched))
         articles = Article.objects.filter(query)
         """articles = Article.objects.filter(title__contains=searched)"""
-        return render(request, 'search-article.html', {'searched': searched, 'articles': articles})
+        return render(request, 'search-article.html',
+                      {'searched': searched, 'articles': articles})
     else:
         return HttpResponseRedirect(reverse('home'))
 
