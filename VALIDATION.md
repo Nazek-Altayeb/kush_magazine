@@ -87,8 +87,10 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
 # Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)
 
 - Desktop 
+
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742650/readme/performance.png)
 - Mobile
+
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742787/readme/performance-mobile.png)
 
 # Browser Testing
