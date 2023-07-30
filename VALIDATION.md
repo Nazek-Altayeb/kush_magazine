@@ -78,12 +78,14 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
 8 issues found.
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690741405/readme/Accessibility-test-result.png)
 - Element must meet minimum color contrast ratio thresholds
-- <html> element must have lang attribute
-  - Fix: added to <html> in base.html, after applying this fix, number of issues has dropped to 5 issues, all point to the same problem (Element must meet minimum 
+- <html> element must have lang attribute.
+    - Fix: added to 'html' element in the base.html, after applying this fix, the number of issues has dropped to 5 issues, all issues point to the same problem 
+    (Element must meet minimum 
          color contrast ratio thresholds)
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742194/readme/Accessibility-second-test-result.png)
 
 # Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)
+
 - Desktop 
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742650/readme/performance.png)
 - Mobile
