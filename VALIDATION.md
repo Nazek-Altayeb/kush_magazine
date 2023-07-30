@@ -44,11 +44,14 @@
   ## 404
 
 # CSS [Jigsaw](https://jigsaw.w3.org/css-validator/)
-The validation result for the style.css comes with no errors. ![jigsaw result](https://res.cloudinary.com/nazek/image/upload/v1690722405/readme/style-result.png).
-
-
+The validation result for the style.css comes with no errors. 
+![jigsaw result](https://res.cloudinary.com/nazek/image/upload/v1690722405/readme/style-result.png).
 
 # JavaScript [JSHint](https://jshint.com/)
+1 undefined variable: bootstrap.
+Referring to line 16 in base.html ``let alert = new bootstrap.Alert(messages);``
+
+![jshint result](https://res.cloudinary.com/nazek/image/upload/v1690722422/readme/js-script-result.png)
 
 # Python [CI Python Linter](https://pep8ci.herokuapp.com/)
 ## Article
