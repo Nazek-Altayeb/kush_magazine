@@ -75,8 +75,19 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-setting.png)
 
 # Accessibility [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+8 issues found.
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690741405/readme/Accessibility-test-result.png)
+- Element must meet minimum color contrast ratio thresholds
+- <html> element must have lang attribute
+  - Fix: added to <html> in base.html, after applying this fix, number of issues has dropped to 5 issues, all point to the same problem (Element must meet minimum 
+         color contrast ratio thresholds)
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742194/readme/Accessibility-second-test-result.png)
 
 # Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)
+- Desktop 
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742650/readme/performance.png)
+- Mobile
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742787/readme/performance-mobile.png)
 
 # Browser Testing
 
