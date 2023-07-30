@@ -69,7 +69,8 @@ Below is the yielded  results given when validating the file views.py.
   ### views
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-account-views.png)
 ## Magazine
-Below is the yielded  result given when validating views.py.
+Below is the yielded  result given when validating setting.py.
+Notice: the same error (line too long) occurs at lines (111 , 142).
   ### settings
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-setting.png)
 

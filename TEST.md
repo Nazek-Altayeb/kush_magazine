@@ -2,31 +2,22 @@
 
 ## Table of Contents
 
-- [Navigation](#navigation)
-
-- [Search](#search)
-
-- [CRUD](#crud)
-  - [Create](#create)
-  - [Read](#read)
-  - [Update](#update)
-  - [Delete](#delete)
-
-- [Filter](#filter)
-
-- [Register](#sign-up)
-
-- [Login](#login)
-
-- [Logout](#logout)
-
-- [Like](#like)
-  
-- [Comment](#comment)
-
-- [Bookmark](#bookmark)
-
-- [Social Links](#social-links)
+- [TestGuide](#testguide)
+  - [Table of Contents](#table-of-contents)
+  - [Navigation](#navigation)
+  - [CRUD](#crud)
+    - [Create](#create)
+    - [Read](#read)
+    - [Update](#update)
+    - [Delete](#delete)
+    - [Filter](#filter)
+    - [Register](#register)
+    - [Login](#login)
+    - [Logout](#logout)
+    - [Like](#like)
+    - [Comment](#comment)
+    - [Bookmark](#bookmark)
+    - [Social links](#social-links)
 
 
 ## Navigation
@@ -139,6 +130,3 @@ Authenticated users only can like articles
 Authenticated users can bookmark articles, so it’s saved for next visits. 
 
 ### Social links 
-
-
-
