@@ -28,11 +28,11 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    date_and_time= models.DateTimeField(default=timezone.now)
+    date_and_time = models.DateTimeField(default=timezone.now)
     body = RichTextField(null=False, blank=False)
     article = models.ForeignKey("Article", related_name="comments", on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-   
+
     class Meta:
         ordering = ["date_and_time"]
 

@@ -24,8 +24,6 @@
     - [models](#models)
   - [Account](#account)
     - [views](#views-1)
-    - [forms](#forms-1)
-    - [models](#models-1)
 - [Accessibility axe DevTools Chrome Extension](#accessibility-axe-devtools-chrome-extension)
 - [Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)](#performance-accessibility-seo-best-practices-lighthouse-chrome-devtools)
 - [Browser Testing](#browser-testing)
@@ -46,6 +44,9 @@
   ## 404
 
 # CSS [Jigsaw](https://jigsaw.w3.org/css-validator/)
+The validation result for the style.css comes with no errors. ![jigsaw result](https://res.cloudinary.com/nazek/image/upload/v1690722405/readme/style-result.png).
+
+
 
 # JavaScript [JSHint](https://jshint.com/)
 
@@ -56,8 +57,6 @@
   ### models
 ## Account
   ### views
-  ### forms
-  ### models
 
 # Accessibility [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
