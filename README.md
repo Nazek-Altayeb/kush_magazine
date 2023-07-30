@@ -80,11 +80,8 @@ Manual test is applied at all user stories,  available at the following [accepta
 
 # Fixed Bugs
 
-# Planned features
-User profile: 
-- Contains Articles that have been saved by the user.
-- Ability to edit personal info.
-- User can change password and image. 
+# Validation
+Validation results available at the following [Validation guide](VALIDATION.md) 
 
 # Technologies
 
