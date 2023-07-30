@@ -22,6 +22,7 @@
     - [views](#views)
     - [forms](#forms)
     - [models](#models)
+    - [urls](#urls)
   - [Account](#account)
     - [views](#views-1)
   - [Magazine](#magazine)
@@ -52,8 +53,9 @@ Referring to line 16 in article.js ``let alert = new bootstrap.Alert(messages);`
 ![jshint result](https://res.cloudinary.com/nazek/image/upload/v1690722422/readme/js-script-result.png)
 
 # Python [CI Python Linter](https://pep8ci.herokuapp.com/)
-python files have been verified with the above validator, below are some results. The rest of python files have similar results.
+python files have been verified with the above validator, below are some results for the three apps (Article, Account, Magazine). The rest of python files have similar results.
 ## Article
+Below are the yielded  results given when validating the files (views.py, forms.py, models.py, urls.py).
   ### views
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-views.png)
   ### forms
@@ -63,9 +65,11 @@ python files have been verified with the above validator, below are some results
   ### urls
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-article-urls.png)
 ## Account
+Below is the yielded  results given when validating the file views.py.
   ### views
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-account-views.png)
 ## Magazine
+Below is the yielded  result given when validating views.py.
   ### settings
   ![python linter result](https://res.cloudinary.com/nazek/image/upload/v1690728469/readme/CI-Python-result-setting.png)
 
