@@ -30,7 +30,7 @@
 - [Accessibility axe DevTools Chrome Extension](#accessibility-axe-devtools-chrome-extension)
 - [Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)](#performance-accessibility-seo-best-practices-lighthouse-chrome-devtools)
 - [Browser Testing](#browser-testing)
- 
+
 # HTML [W3C validator](https://validator.w3.org/)
   ## Home
   ## Base
@@ -77,7 +77,8 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
 # Accessibility [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 8 issues found.
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690741405/readme/Accessibility-test-result.png)
-- Element must meet minimum color contrast ratio thresholds
+- Element must meet minimum color contrast ratio thresholds.
+- IDs of active elements must be unique.
 - <html> element must have lang attribute.
     - Fix: added to 'html' element in the base.html, after applying this fix, the number of issues has dropped to 5 issues, all issues point to the same problem 
     (Element must meet minimum 
@@ -86,7 +87,7 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
 
 # Performance, Accessibility, SEO, Best Practices (Lighthouse Chrome DevTools)
 
-- Desktop 
+- Desktop
 
 ![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742650/readme/performance.png)
 - Mobile
