@@ -1,3 +1,7 @@
+let comment_block;
+let delete_block;
+let bootstrap;
+
 function comment() {
     comment_block = document.getElementById("comment_block");
     comment_block.style.display = "block";
