@@ -4,6 +4,15 @@ Develop online magazine where users could participate according to their granted
 with this websitegthe user who grant a Moderator privileges can write and manage articles. Besides, 
 every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
+[Click this link to view the Website.](https://kush-online-magazine.herokuapp.com/)
+The following Moderators have granted full access privileges.
+| Name | Password                             |
+| :------------:| :------------------:|
+| **Yuni** | Code123inst. |
+| **Wasim** | Code123inst. |
+| **Ioannidis** | Code123inst. |
+See the [system analysis](#System-analysis)  to learn the logic.
+
 # Target audience
 
 - Readers who are interested in online magazines.
@@ -41,7 +50,7 @@ Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails 
 
 # System analysis / Use case diagram
 
-![Use case duagram](/static/images/usecase-diagram.png)
+![Use case diagram](/static/images/usecase-diagram.png)
 
 # Database Design / ERD
 
@@ -69,7 +78,9 @@ available at the [backlog](https://github.com/users/Nazek-Altayeb/projects/3).
 By clicking on each user story, details of how the feature is implemented will be displayed.
 
 # Existing Features
+
 ## Features Guide
+
 All features are expressed in the following [feature guide](FEATURES.md).
 
 # Testing
