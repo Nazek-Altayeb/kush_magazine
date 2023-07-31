@@ -35,7 +35,7 @@
   No errors, no warnings.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-home.png)
   ## Article
-  1 errors, caused by using the as paragraph.
+  1 errors, caused by using the form as paragraph.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690843581/readme/w3c-article.png)
   ## Profile
   No errors.
