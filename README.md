@@ -15,7 +15,7 @@ The following Moderators have granted full access privileges.
 | **Ioannidis** | Code123inst. |
 
 
-See the [system analysis](#System-analysis)  to learn the logic.
+See the [system analysis](#system-analysis)  to learn the logic.
 
 # Target audience
 
