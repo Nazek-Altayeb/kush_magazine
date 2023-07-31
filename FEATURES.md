@@ -15,13 +15,15 @@
 
 
 # Register
-Users who visit the site could register using the register form, then they will be redirect to the login page,
-these users would be able to leave comments, like articles and save some at their profile.
-In the other hand, this site is managed by three Moderators (names and password listed here [readme](README.md))
+Users who would like to create accounts in our site should use the register form first, 
+after registeration they will be directed to the login page.
+there they will enjoy reading articles summaries.
+In the other hand, there are three Moderators who manage the articles,
+(names and password listed here [readme](README.md))
 ![Register](https://res.cloudinary.com/nazek/image/upload/v1690834782/readme/Register.png)
 
 # Login
-Below is the login form.
+Below is the login form, only logged in users can participate (write comment, like, save articles)
 ![Login](https://res.cloudinary.com/nazek/image/upload/v1690834782/readme/login.png)
 
 
@@ -38,7 +40,7 @@ Users with Moderator privileges can update or delete their own articles.
 ![Update/Delete article](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/update-delete.png)
 
 # Comment/Like/Bookmark
-Logged in users can interact by leaving a comment or like specific article or bookmark some.
+Logged in users can interact by leaving a comment o like specific article or bookmark some.
 ![Comment/Like/Bookmark](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/comment-like-bookmark.png)
 
 # Add topic
@@ -46,7 +48,7 @@ Users with Moderator privileges can add new topics using the related form, later
 ![Add topic](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/add-topic.png)
 
 # Search articles
-All users including visitors can search for articles according to the author name or article title/topic.
+All users including visitors can search for articles by to the author name or asrticle title/topic.
 ![Search articles](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/search.png)
 
 
