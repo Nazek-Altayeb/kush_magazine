@@ -7,13 +7,12 @@
   - [Table of Contents](#table-of-contents)
 - [HTML W3C validator](#html-w3c-validator)
   - [Home](#home)
-  - [Base](#base)
-  - [Register](#register)
+  - [Article](#article)
+  - [Profile](#profile)
   - [Login](#login)
   - [Add article](#add-article)
-  - [Update article](#update-article)
+  - [Topic](#topic)
   - [Add topic](#add-topic)
-  - [Article](#article)
   - [404](#404)
 - [CSS Jigsaw](#css-jigsaw)
 - [JavaScript JSHint](#javascript-jshint)
@@ -33,14 +32,21 @@
 
 # HTML [W3C validator](https://validator.w3.org/)
   ## Home
-  ## Base
-  ## Register
-  ## Login
-  ## Add article
-  ## Update article
-  ## Add topic
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-home.png)
   ## Article
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-article.png)
+  ## Profile
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-profile.png)
+  ## Login
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-login.png)
+  ## Add article
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690823626/readme/w3c-add_article.png)
+  ## Topic
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-topic.png)
+  ## Add topic
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-add_topic.png)
   ## 404
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822865/readme/w3c-404.png)
 
 # CSS [Jigsaw](https://jigsaw.w3.org/css-validator/)
 The validation result for the style.css comes with no errors. 

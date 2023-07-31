@@ -15,14 +15,14 @@
                         </h5>
                         <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                             {{article.author.username|capfirst}}</h6>
-                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                        <a class="right" href="{% url 'topic' article.topic%}">
                             {{article.topic}} </a>
                         <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
                         <p class="card-text mb-0">{{article.body|safe}}<a class="read-more-style"
-                                href="{% url 'article' article.pk %}"> read more</a></span></p>
-                        <br />
+                                href="{% url 'article' article.pk %}"> read more</a>
+                            <br />
                     </div>
                 </div>
             </div>
@@ -32,5 +32,5 @@
 </div>
 {% endblock %}
 {% block js_block %}
-<script type="text/javascript" src="{% static 'script/article.js' %}"></script>
+<script src="{% static 'script/article.js' %}"></script>
 {% endblock %}

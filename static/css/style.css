@@ -37,9 +37,10 @@ body {
     overflow: hidden;
 }
 
-.card-body>h7 {
+.card-body>section {
     font-size: 1rem;
     font-weight: 400;
+    font-style: normal
 }
 
 .author {

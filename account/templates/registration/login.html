@@ -3,8 +3,6 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-
-
 <div class="container-fluid ">
     <div class="container right">
         <h1 class="article"> Login </h1>
@@ -12,7 +10,6 @@
             <div class="col-md-10 col-sm-6">
                 <div class="card article_body mb-4 border">
                     <div class="card-body">
-                        <h5 class="card-title">{{article.title}}</h5>
                         <div class="form-group">
                             <form method="POST">
                                 {% csrf_token %}

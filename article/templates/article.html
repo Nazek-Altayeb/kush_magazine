@@ -11,12 +11,12 @@
                         <h5 class="card-title spicy-mustard">{{article.title}}</h5>
                         <h6 class="category_and_author card-subtitle mb-2 text-muted">By:
                             {{article.author.username|capfirst}}</h6>
-                        <a class="right" href="{% url 'topic' article.topic%}" id="blue">
+                        <a class="right" href="{% url 'topic' article.topic%}">
                             {{article.topic}} </a>
                         <small class="category_and_author right">Topic : </small>
                         <br />
                         <br />
-                        <h7 class="card-text ">{{article.body| safe}}</h7>
+                        <section class="card-text ">{{article.body| safe}}</section>
                         <br />
                         <!-- add-comment trigger modal -->
                         {% if user.is_authenticated %}
@@ -171,5 +171,5 @@
 {% endblock %}
 
 {% block js_block %}
-<script type="text/javascript" src="{% static 'script/article.js' %}"></script>
+<script src="{% static 'script/article.js' %}"></script>
 {% endblock %}
