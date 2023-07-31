@@ -56,12 +56,12 @@ Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails 
 # System analysis
 - Use case diagram
 
-![Use case diagram](/static/images/usecase-diagram.png)
+![Use case diagram](https://res.cloudinary.com/nazek/image/upload/v1690833977/readme/usecase-diagram.png)
 
 # Database Design
 - ERD diagram
 
-![ERD](/static/images/ERD-diagram.png)
+![ERD](https://res.cloudinary.com/nazek/image/upload/v1690833977/readme/erd-diagram.png)
 
 # Agile workflow
 
@@ -73,7 +73,7 @@ With the use of GitHub's kanban board, issues have been listed with labels for e
    - authentication with allauth take a place as a third step after testing the CRUD.
 2. GitHub Features / Issues
    - The user stories have been given a Github issue, each is prioritized and is a given one of three labels (Must have , Should have, Could have).
-     ![Issues](/static/images/issues.png).
+     ![Issues](https://res.cloudinary.com/nazek/image/upload/v1690833977/readme/issues.png).
 
 # Implementation Plan
 The implementation plan have been written for each [user story](#user-stories) individually, 
