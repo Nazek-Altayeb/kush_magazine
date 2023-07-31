@@ -15,7 +15,7 @@ The following Moderators have granted full access privileges.
 | **Ioannidis** | Code123inst. |
 
 
-See the [system analysis](#system-analysis-use-case-diagram)  to learn the logic.
+See the [System analysis](#system-analysis) to learn the logic.
 
 # Target audience
 
@@ -52,7 +52,8 @@ spicy-mustard is the background color for all cards, that includes ( register/lo
 ## Typography
 Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails to load.
 
-# System analysis / Use case diagram
+# System analysis
+- Use case diagram
 
 ![Use case diagram](/static/images/usecase-diagram.png)
 
