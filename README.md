@@ -1,8 +1,8 @@
 # Goal
 
 Develop online magazine where users could participate according to their granted access privileges,
-with this websiteguser who comesrant a Moderator privileges can write and manage articles. 
-Every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
+with this websitegthe user who grant a Moderator privileges can write and manage articles. Besides, 
+every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
 # Target audience
 
@@ -225,10 +225,12 @@ Changes made to a cloned repository will affect the original one.
 - Code : below are different resouces, that help to set up the environment and structure the code.
   - [Codemy.com channel](https://www.youtube.com/@Codemycom/playlists)
   - [Code Institute LMS | I Think Therefore I Blog](https://learn.codeinstitute.net/ci_program/diplomainfullstacksoftwarecommoncurriculum).
-- content : the below websites are references for the  articles listed in my website.
-  - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles).
-  - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714).
-  - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en).
+- content : the below websites are references for the  written articles listed in my website.
+  - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles) Photograph articles.
+  - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714) Artificial intelligence articles.
+  - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en) Epidemiology articles.
 # Aknowledgement
-- My Mentor **Antonio Rodriguez** for continuous helpful feedback.
-- Tutors support at Code Institute for their support.
+
+- I programmed the project my self. references are added to the code for external source code.
+- Many thanks to Mentor **Antonio Rodriguez** for continuous helpful feedback.
+- Thanks to Tutors support at Code Institute for their support.
