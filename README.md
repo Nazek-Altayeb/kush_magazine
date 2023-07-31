@@ -70,13 +70,7 @@ By clicking on each user story, details of how the feature is implemented will b
 
 # Existing Features
 
-1. CRUD articles
-2. Comment on article
-3. like an article
-4. filter articles
-5. search for article
-6. Bookmark an article
-7. Manage access piviliges
+All features are expressed in the following [feature guide](FEATURES.md).
 
 # Testing
 
@@ -84,6 +78,7 @@ By clicking on each user story, details of how the feature is implemented will b
 Manual test is applied at all user stories,  available at the following [acceptance criteria guide](TEST.md).
 
 # Fixed Bugs
+Bugs are found continuously, here are the known ones sofar [known bugs](FIXED-BUGS).
 
 # Validation
 All written files have been validated, besides the website accessability and performance are validates as well,
@@ -222,10 +217,10 @@ Changes made to a cloned repository will affect the original one.
 - Select **Code** and click "Download Zip" file
 - Once download is completed, extract ZIP file and use in your local environment.
 # Credits
-- Code : below are different resouces, that help to set up the environment and structure the code.
+- Code : below are resouces, that help to set up the environment and structure the code.
   - [Codemy.com channel](https://www.youtube.com/@Codemycom/playlists)
   - [Code Institute LMS | I Think Therefore I Blog](https://learn.codeinstitute.net/ci_program/diplomainfullstacksoftwarecommoncurriculum).
-- content : the below websites are references for the  written articles listed in my website.
+- Content : the below websites are references for the  written articles listed in my website.
   - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles) Photograph articles.
   - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714) Artificial intelligence articles.
   - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en) Epidemiology articles.
