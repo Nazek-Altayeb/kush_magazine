@@ -57,13 +57,10 @@ Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails 
 
 ![Use case diagram](/static/images/usecase-diagram.png)
 
-# Database Design / ERD
+# Database Design
+- ERD diagram
 
 ![ERD](/static/images/ERD-diagram.png)
-
-# UX Plane
-
-## Scope
 
 # Agile workflow
 
