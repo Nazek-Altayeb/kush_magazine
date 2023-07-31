@@ -1,7 +1,7 @@
 # Goal
 
 Develop online magazine where users could participate according to their granted access privileges,
-with this websitegthe user who grant a Moderator privileges can write and manage articles. Besides, 
+with this website the user who grant a Moderator privileges can write and manage articles. Besides, 
 every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
 [Click this link to view the Website.](https://kush-online-magazine.herokuapp.com/)
@@ -244,6 +244,9 @@ Changes made to a cloned repository will affect the original one.
   - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles) Photograph articles.
   - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714) Artificial intelligence articles.
   - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en) Epidemiology articles.
+- Readme : The below README was a reference guide to demonstrate and structure my project. 
+  - [woohoo-haiku](https://github.com/Kathrin-ddggxh/woohoo-haiku) 
+
 # Aknowledgement
 
 - I programmed the project my self. references are added to the code for external source code.
