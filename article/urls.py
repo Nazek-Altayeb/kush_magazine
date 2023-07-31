@@ -22,4 +22,5 @@ urlpatterns = [
     path("topic/<str:tpc>", views.TopicView, name="topic"),
     path("like/<int:pk>", views.LikeView, name="like-article"),
     path("bookmark/<int:pk>", views.BookmarkView, name="bookmark-article"),
+    path("404", views.Custom_404, name="404"),
 ]

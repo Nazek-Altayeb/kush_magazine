@@ -157,3 +157,7 @@ def DeleteView(request, pk):
     msg = "Your article has been deleted"
     messages.add_message(request, messages.SUCCESS, msg)
     return HttpResponseRedirect(reverse('home'))
+
+# custom 404 view
+def Custom_404(request, exception):
+    return render(request, '404.html', status=404)
