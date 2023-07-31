@@ -87,14 +87,14 @@ Articles will be displayed according to the selected topic.
 Articles will be displayed according to the search criteria (Author, title, topic).
 | Feature | Action                             | Expected Result                 |
 | :-----: | :---------------------------------:| :------------------------------:|
-| **Search button** | Type in the search area author name or article title/topic, then click on search button. | page render all articles relate to the search criteria.  |
+| **Search button** | Type in the search area an author name or article title/topic, then click on search button. | page render all articles relate to the search criteria.  |
 
 ## Register 
 User creates an account
 
 | Feature | Action                             | Expected Result                 |
 | :-----: | :---------------------------------:| :------------------------------:|
-| **Register form ** | On navbar, click on the register button. | Register Form will be displayed, all fields should be filled.  |
+| **Register form** | On navbar, click on the register button. | Register Form will be displayed, all fields should be filled.  |
 | **Incomplete form** | Click on submit where a field at least is not filled properly. |  Alert messages will be displayed beside each incomplete field. |
 | **submit** | Click on the submit button after filling in the form properly. | A new account is created a user is redirected to the login page. |
 
@@ -119,21 +119,21 @@ Only authenticated user can logout
 
 
 ## Like  
-Authenticated users only can leave comments articles.
+Authenticated users only can like articles.
 
 | Feature | Action                             | Expected Result                 |
 | :-----: | :---------------------------------:| :------------------------------:|
 | **Like icon** | Below the article, click on like.  | the number of likes is increased 1, and the icon turns to filled thumb-up.  |
-| **Unlike** | Click on the submit button after filling in the form properly. | the number of likes is decreased 1, and the icon turns to empty thumb-up  |
+| **Unlike** | Click on filled thumb-up. | the number of likes is decreased 1, and the icon turns to empty thumb-up  |
 
 
 ## Comment 
-Authenticated users only can like articles 
+Authenticated users only can leave comments articles 
 
 | Feature | Action                             | Expected Result                 |
 | :-----: | :---------------------------------:| :------------------------------:|
-| **Comment icon** | Below the article, click on comment icon, a dialog box is displayed to write a comment inside.  | Alert messages will be displayed beside each incomplete field or wrong input.  |
-| **Unlike** | After filling in the comment, click on submit. | Comment is displayed below the article. |
+| **Comment icon** | Below the article, click on comment icon,  |  a dialog box is displayed to write a comment inside.  |
+| **Sumbit** | After filling in the comment, click on submit. | Comment is displayed below the article with date/time and the user name. |
 
 
 ## Bookmark 
