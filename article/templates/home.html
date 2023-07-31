@@ -7,7 +7,7 @@
         <h1 class="article"> Articles </h1>
         <div class="row justify-content-center">
             {% for article in object_list %}
-            <div class="col-md-4 col-sm-8">
+            <div class="col-12">
                 <div class="card article_body mb-4 border">
                     <div class="card-body">
                         <h5 class="card-title"><a class="no-style"
@@ -21,7 +21,7 @@
                         <br />
                         <br />
                         <p class="card-text mb-0">{{article.body|safe}}<a class="read-more-style"
-                                href="{% url 'article' article.pk %}"> read more</a>
+                                href="{% url 'article' article.pk %}"> more...</a>
                             <br />
                     </div>
                 </div>
