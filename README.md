@@ -95,7 +95,7 @@ Manual test is applied at all user stories,  available at the following [accepta
 
 ## Bugs Guide
 
-Bugs are found continuously, here are the known ones sofar [known bugs](FIXED-BUGS.md).
+Bugs are found continuously, here are the [known bugs](FIXED-BUGS.md) sofar .
 
 # Validation
 
