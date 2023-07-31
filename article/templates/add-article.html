@@ -15,8 +15,7 @@
                         <div class="form-group">
                             <form method="POST">
                                 {% csrf_token %}
-                                {{ form.media }}
-                                {{ form.as_p }}
+                                {{ form.as_p | safe}}
                                 <button class="save-article-button">Save article</button>
                             </form>
                         </div>
