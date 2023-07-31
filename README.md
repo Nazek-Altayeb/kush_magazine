@@ -244,7 +244,7 @@ Changes made to a cloned repository will affect the original one.
   - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles) Photograph articles.
   - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714) Artificial intelligence articles.
   - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en) Epidemiology articles.
-- Readme : The below README was a reference guide to demonstrate and structure my project. 
+- Readme : The below README was a reference guide i have used to demonstrate and structure my project. 
   - [woohoo-haiku](https://github.com/Kathrin-ddggxh/woohoo-haiku) 
 
 # Aknowledgement
