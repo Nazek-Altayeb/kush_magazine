@@ -47,7 +47,7 @@ See the [System analysis](#system-analysis) to learn the logic.
 - The content of each page is centered in the middle.
 
 ## Colors
-spicy-mustard is the background color for all cards, that includes ( register/login, article, comment) card and the header/footer background as well , the shadow is grey. And the rest of the page remais white.
+Spicy mustard is the background color for all cards, that includes ( register/login, article, comment) card and the header/footer background as well , the shadow is grey. And the rest of the page remais white.
 
 ## Typography
 Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails to load.
