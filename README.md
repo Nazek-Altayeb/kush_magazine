@@ -10,9 +10,9 @@ The following Moderators have granted full access privileges.
 
 | Name | Password                             |
 | :------------:| :------------------:|
-| **Yuni** | Code123inst. |
-| **Wasim** | Code123inst. |
-| **Ioannidis** | Code123inst. |
+| **Yuni** | Code123inst |
+| **Wasim** | Code123inst |
+| **Ioannidis** | Code123inst |
 
 See the [System analysis](#system-analysis) to learn the logic.
 
