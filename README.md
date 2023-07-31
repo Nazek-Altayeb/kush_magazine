@@ -1,7 +1,8 @@
 # Goal
 
-Develop an online magazine where moderators could write articles of different topics,
-login users could write comments and like articles, where also guests would have the ability to read and search articles.
+Develop online magazine where users could participate according to their granted access privileges,
+with this websiteguser who comesrant a Moderator privileges can write and manage articles. 
+Every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
 # Target audience
 
@@ -16,21 +17,24 @@ login users could write comments and like articles, where also guests would have
    - Manage access priviliges.
 2. As a Moderator I want to:
    - Write, update and delete my own articles.
+   - Comment, like and bookmark articles.
 3. As a user I can:
    - comment on articles. 
    - Like articles.
    - Search for an article.
    - Filter articles according to topics.
    - Bookmark articles.
-4. As a guest I want to:
+4. As a guest I can
    - Read articles.
    - Search for an article.
 
 ## Design
 
 ## Colors
+spicy-mustard is the background color for all cards, that includes ( register/login, article, comment) card and the header/footer background as well , the shadow is grey. And the rest of the page remais white.
 
 ## Typography
+Basicly, Lato is the font used and Sans-serif is the back-up font if Lato fails to load.
 
 # System analysis / Use case diagram
 
@@ -43,8 +47,6 @@ login users could write comments and like articles, where also guests would have
 # UX Plane
 
 ## Scope
-
-## Logic Path
 
 # Agile workflow
 

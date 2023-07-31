@@ -141,10 +141,10 @@ def BookmarkView(request, pk):
 def SearchArticleView(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        query = Q(Q(title__contains=searched) |
-                  Q(topic__contains=searched))
+        query = (Q(title__icontains=searched) |
+                  Q(topic__icontains=searched) |
+                  Q(author__username__icontains=searched))
         articles = Article.objects.filter(query)
-        """articles = Article.objects.filter(title__contains=searched)"""
         return render(request, 'search-article.html',
                       {'searched': searched, 'articles': articles})
     else:
