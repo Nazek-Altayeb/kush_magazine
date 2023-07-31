@@ -32,20 +32,30 @@
 
 # HTML [W3C validator](https://validator.w3.org/)
   ## Home
+  No errors, no warnings.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-home.png)
   ## Article
-  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-article.png)
+  1 errors, caused by using the as paragraph.
+  ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690843581/readme/w3c-article.png)
   ## Profile
+  No errors.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-profile.png)
   ## Login
+  No errors, no warnings.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822233/readme/w3c-login.png)
   ## Add article
+  1 error caused by defining this field as charfield then it has been modified to be drop-down, 
+  resolving this error cost re-creating the articles once again after altering the table. 
+  This error will be considered for future updates.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690823626/readme/w3c-add_article.png)
   ## Topic
+  No errors.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-topic.png)
   ## Add topic
+  No errors, no warnings.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822232/readme/w3c-add_topic.png)
   ## 404
+  No errors, no warnings.
   ![w3c result](https://res.cloudinary.com/nazek/image/upload/v1690822865/readme/w3c-404.png)
 
 # CSS [Jigsaw](https://jigsaw.w3.org/css-validator/)
@@ -95,10 +105,10 @@ Notice: the same error (line too long) occurs at lines (111 , 142).
 
 - Desktop
 
-![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742650/readme/performance.png)
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690842844/readme/performance.png)
 - Mobile
 
-![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690742787/readme/performance-mobile.png)
+![Accessibility](https://res.cloudinary.com/nazek/image/upload/v1690842844/readme/performance-mobile.png)
 
 # Browser Testing
 
