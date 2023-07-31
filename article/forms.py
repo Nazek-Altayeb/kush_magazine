@@ -9,6 +9,10 @@ for topic in topics:
 
 
 class ArticleForm(forms.ModelForm):
+    """
+    Form model that allows moderators to
+    create and save articles
+    """
     class Meta:
         model = Article
         fields = ('title', 'author', 'topic', 'body', )
@@ -29,6 +33,10 @@ class ArticleForm(forms.ModelForm):
 
 
 class EditArticleForm(forms.ModelForm):
+    """
+    Form model that allows a moderator to
+    change articles content,only those that are written by him/her 
+    """
     class Meta:
         model = Article
         fields = ('title', 'body',)
@@ -39,6 +47,10 @@ class EditArticleForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Form model that allows authenticated users to
+    comment on articles
+    """
     class Meta:
         model = Comment
         fields = ('body',)
@@ -48,6 +60,10 @@ class CommentForm(forms.ModelForm):
 
 
 class TopicForm(forms.ModelForm):
+    """
+    Form model that allows moderators to
+    create and save topics
+    """
     class Meta:
         model = Topic
         fields = ('name',)
