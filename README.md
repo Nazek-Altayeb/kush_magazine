@@ -5,6 +5,8 @@ with this websitegthe user who grant a Moderator privileges can write and manage
 every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
 [Click this link to view the Website.](https://kush-online-magazine.herokuapp.com/)
+![Website](https://res.cloudinary.com/nazek/image/upload/v1690812932/readme/website.png)
+
 
 The following Moderators have granted full access privileges.
 
