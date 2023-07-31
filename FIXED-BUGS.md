@@ -12,6 +12,5 @@
   * Fix : move the likes accumulator statement outside the if clause in get_context_data method.
 * Bugs: errors accours because of typo in views methods and some templates.
   * Fix: correct variables/fields names.
-* Bugs: Get errors and warnings in templates.
+* Bugs: Get errors and warnings when validating templates.
   * fix: remove duplicated Ids used in multiple elements, remove un-used tags.
-*  
