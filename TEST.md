@@ -10,14 +10,14 @@
     - [Read](#read)
     - [Update](#update)
     - [Delete](#delete)
-    - [Filter](#filter)
-    - [Register](#register)
-    - [Login](#login)
-    - [Logout](#logout)
-    - [Like](#like)
-    - [Comment](#comment)
-    - [Bookmark](#bookmark)
-    - [Social links](#social-links)
+  - [Filter](#filter)
+  - [Register](#register)
+  - [Login](#login)
+  - [Logout](#logout)
+  - [Like](#like)
+  - [Comment](#comment)
+  - [Bookmark](#bookmark)
+  - [Social links](#social-links)
 
 
 ## Navigation
@@ -76,10 +76,20 @@ The Moderator can select and delete articles.
 | **cancel** | Click on cancel button on delete dialog box. | Deletion will not be executed and alert message dialog box will be closed. |
 
 
-### Filter
+## Filter
+Articles will be displayed according to the selected topic. 
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Topic dropdown button** | Click on Topic drop-down, then select a topic. | page render all articles under the same topic.  |
 
+## Search
 
-### Register 
+Articles will be displayed according to the search criteria (Author, title, topic).
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Search button** | Type in the search area author name or article title/topic, then click on search button. | page render all articles relate to the search criteria.  |
+
+## Register 
 User creates an account
 
 | Feature | Action                             | Expected Result                 |
@@ -89,7 +99,7 @@ User creates an account
 | **submit** | Click on the submit button after filling in the form properly. | A new account is created a user is redirected to the login page. |
 
 
-### Login
+## Login
 A user who has already an account will no longer see ‘Register’ link on the navbar, but ‘Login’ instead 
 
 | Feature | Action                             | Expected Result                 |
@@ -100,7 +110,7 @@ A user who has already an account will no longer see ‘Register’ link on the 
 
 
 
-### Logout 
+## Logout 
 Only authenticated user can logout 
 
 | Feature | Action                             | Expected Result                 |
@@ -108,7 +118,7 @@ Only authenticated user can logout
 | **Logout link** | On navbar, click on logout link. | User is redirect to the home page. |
 
 
-### Like  
+## Like  
 Authenticated users only can leave comments articles.
 
 | Feature | Action                             | Expected Result                 |
@@ -117,7 +127,7 @@ Authenticated users only can leave comments articles.
 | **Unlike** | Click on the submit button after filling in the form properly. | the number of likes is decreased 1, and the icon turns to empty thumb-up  |
 
 
-### Comment 
+## Comment 
 Authenticated users only can like articles 
 
 | Feature | Action                             | Expected Result                 |
@@ -126,7 +136,10 @@ Authenticated users only can like articles
 | **Unlike** | After filling in the comment, click on submit. | Comment is displayed below the article. |
 
 
-### Bookmark 
+## Bookmark 
 Authenticated users can bookmark articles, so it’s saved for next visits. 
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Bookmark icon** | Below the article, click on save icon.  | article will be listed in your profile, and the icon turns to filled bookmark.  |
+| **disable icon** | click on filled-save icon | and the icon turns to empty bookmark  |
 
-### Social links 
