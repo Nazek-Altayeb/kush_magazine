@@ -30,6 +30,9 @@ Every login user can comment, like and bookmark articles, also s/he has his/her 
 
 ## Design
 
+- The UX is easy to understand and use
+- The content of each page is centered in the middle.
+
 ## Colors
 spicy-mustard is the background color for all cards, that includes ( register/login, article, comment) card and the header/footer background as well , the shadow is grey. And the rest of the page remais white.
 
@@ -83,7 +86,8 @@ Manual test is applied at all user stories,  available at the following [accepta
 # Fixed Bugs
 
 # Validation
-Validation results available at the following [Validation guide](VALIDATION.md) 
+All written files have been validated, besides the website accessability and performance are validates as well,
+validation  results available at the following [Validation guide](VALIDATION.md) 
 
 # Technologies
 
@@ -216,8 +220,15 @@ Changes made to a cloned repository will affect the original one.
 
 - Log into GitHub and click on repository to download ([kush-magazine](https://github.com/Nazek-Altayeb/kush_magazine))
 - Select **Code** and click "Download Zip" file
-- Once download is completed, extract ZIP file and use in your local environment
-- 
+- Once download is completed, extract ZIP file and use in your local environment.
 # Credits
-
+- Code : below are different resouces, that help to set up the environment and structure the code.
+  - [Codemy.com channel](https://www.youtube.com/@Codemycom/playlists)
+  - [Code Institute LMS | I Think Therefore I Blog](https://learn.codeinstitute.net/ci_program/diplomainfullstacksoftwarecommoncurriculum).
+- content : the below websites are references for the  articles listed in my website.
+  - [Wasim Ahmad articles](https://fstoppers.com/profile/74735/articles).
+  - [Yuni Wen articles](https://www.sciencedirect.com/science/article/pii/S0160791X23000714).
+  - [John P.A. Ioannidis articles](https://scholar.google.com/citations?user=JiiMY_wAAAAJ&hl=en).
 # Aknowledgement
+- My Mentor **Antonio Rodriguez** for continuous helpful feedback.
+- Tutors support at Code Institute for their support.
