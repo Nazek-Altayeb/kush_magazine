@@ -69,7 +69,7 @@ available at the [backlog](https://github.com/users/Nazek-Altayeb/projects/3).
 By clicking on each user story, details of how the feature is implemented will be displayed.
 
 # Existing Features
-
+## Features Guide
 All features are expressed in the following [feature guide](FEATURES.md).
 
 # Testing
@@ -78,9 +78,15 @@ All features are expressed in the following [feature guide](FEATURES.md).
 Manual test is applied at all user stories,  available at the following [acceptance criteria guide](TEST.md).
 
 # Fixed Bugs
-Bugs are found continuously, here are the known ones sofar [known bugs](FIXED-BUGS).
+
+## Bugs Guide
+
+Bugs are found continuously, here are the known ones sofar [known bugs](FIXED-BUGS.md).
 
 # Validation
+
+## Validation Guide
+
 All written files have been validated, besides the website accessability and performance are validates as well,
 validation  results available at the following [Validation guide](VALIDATION.md) 
 
