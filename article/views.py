@@ -15,7 +15,11 @@ from django.contrib import messages
 from django.db.models import Q
 
 
+# home page view
 class HomeView(ListView):
+    """
+    Renders all objects of article model
+    """
     model = Article
     template_name = 'home.html'
 
@@ -26,7 +30,11 @@ class HomeView(ListView):
         return context
 
 
+# detailed article view
 class ArticleDetailView(FormMixin, DetailView):
+    """
+    Renders specific article
+    """
     model = Article
     form_class = CommentForm
     template_name = 'article.html'
@@ -67,7 +75,11 @@ class ArticleDetailView(FormMixin, DetailView):
         return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
+# create article view
 class AddArticleView(CreateView):
+    """
+    Create new article
+    """
     model = Article
     form_class = ArticleForm
     template_name = 'add-article.html'
@@ -81,7 +93,11 @@ class AddArticleView(CreateView):
         return super(CreateView, self).form_valid(form)
 
 
+# update article view 
 class UpdateArticleView(UpdateView):
+    """
+    update existing article
+    """
     model = Article
     form_class = EditArticleForm
     template_name = 'update-article.html'
@@ -95,26 +111,42 @@ class UpdateArticleView(UpdateView):
         return super(UpdateView, self).form_valid(form)
 
 
+# delete article view
 class DeleteArticleView(DeleteView):
+    """
+    Delete specific article
+    """
     model = Article
     template_name = 'delete-article.html'
     success_url = reverse_lazy('home')
 
 
+# create topic view
 class AddTopicView(CreateView):
+    """
+    Create new topic
+    """
     model = Topic
     form_class = TopicForm
     template_name = 'add-topic.html'
 
 
+# topic view 
 def TopicView(request, tpc):
+    """
+    retrive articles according to specific topic
+    """
     topic_articles = Article.objects.filter(topic=tpc)
     return render(
         request, 'topics.html', {
             'tpc': tpc.title(), 'topic_articles': topic_articles})
 
 
+# like article view
 def LikeView(request, pk):
+    """
+    Increase like counter after clicking the like icon
+    """
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     liked = False
     if article.likes.filter(id=request.user.id).exists():
@@ -126,7 +158,11 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
+# save article view
 def BookmarkView(request, pk):
+    """
+    save article to user profile
+    """
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     favourite = False
     if article.favourites.filter(id=request.user.id).exists():
@@ -138,7 +174,11 @@ def BookmarkView(request, pk):
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 
+# search for article/s view
 def SearchArticleView(request):
+    """
+    Search for article according to author or article title or article topic
+    """
     if request.method == "POST":
         searched = request.POST['searched']
         query = (Q(title__icontains=searched) |
@@ -151,13 +191,21 @@ def SearchArticleView(request):
         return HttpResponseRedirect(reverse('home'))
 
 
+# delete article view
 def DeleteView(request, pk):
+    """
+    Remove article
+    """
     article = get_object_or_404(Article, id=request.POST.get('article-id'))
     article.delete()
     msg = "Your article has been deleted"
     messages.add_message(request, messages.SUCCESS, msg)
     return HttpResponseRedirect(reverse('home'))
 
+
 # custom 404 view
 def Custom_404(request, exception):
+    """
+    Render page-not-found
+    """
     return render(request, '404.html', status=404)

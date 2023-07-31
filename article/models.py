@@ -9,6 +9,9 @@ from ckeditor.fields import RichTextField
 
 
 class Article(models.Model):
+    """
+    Define Article object
+    """
     title = models.CharField(max_length=100, null=False, blank=False)
     body = RichTextField(null=False, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -28,6 +31,9 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Define Comment object
+    """
     date_and_time = models.DateTimeField(default=timezone.now)
     body = RichTextField(null=False, blank=False)
     article = models.ForeignKey("Article", related_name="comments",
@@ -42,6 +48,9 @@ class Comment(models.Model):
 
 
 class Topic(models.Model):
+    """
+    Define Topic object
+    """
     name = models.CharField(max_length=50, null=False, blank=False)
 
     def __str__(self):
