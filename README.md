@@ -4,7 +4,7 @@ Develop online magazine where users could participate according to their granted
 with this websitegthe user who grant a Moderator privileges can write and manage articles. Besides, 
 every login user can comment, like and bookmark articles, also s/he has his/her own profile where the written and/or bookmarked articles are listed there.
 
-![Website](https://res.cloudinary.com/nazek/image/upload/v1690812932/readme/website.png)
+[Click this link to view the Website.](https://kush-online-magazine.herokuapp.com/)
 
 The following Moderators have granted full access privileges.
 
@@ -14,10 +14,9 @@ The following Moderators have granted full access privileges.
 | **Wasim** | Code123inst. |
 | **Ioannidis** | Code123inst. |
 
-
 See the [System analysis](#system-analysis) to learn the logic.
 
-[Click this link to view the Website.](https://kush-online-magazine.herokuapp.com/)
+![Website](https://res.cloudinary.com/nazek/image/upload/v1690812932/readme/website.png)
 
 # Target audience
 
