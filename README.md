@@ -98,7 +98,7 @@ Manual test is applied at all user stories,  available at the following [accepta
 Bugs are found continuously, here are the [known bugs](FIXED-BUGS.md) sofar .
 
 # Un-fixed Bug
-- Bug: p element showen when editing the article for update, 
+- Bug: p element shown when editing the article for update, 
   although the attribute 'safe' is used in order to prevent this.
 
 # Validation
