@@ -82,9 +82,51 @@ By clicking on each user story, details of how the feature is implemented will b
 
 # Existing Features
 
-## Features Guide
+## Register
 
-All features are expressed in the following [feature guide](FEATURES.md).
+Users who would like to create accounts in our site should use the register form first,
+after registeration they will be directed to the login page.
+there they will enjoy reading articles summaries.
+In the other hand, there are three Moderators who manage the articles,
+(names and password listed here [readme](README.md))
+![Register](https://res.cloudinary.com/nazek/image/upload/v1690834782/readme/Register.png)
+
+## Login
+
+Below is the login form, the logged in user could be  a Moderator who grant full privileges, means s/he could create and manage articles.
+otherwise s/he could participate (write comment, like, save articles)
+![Login](https://res.cloudinary.com/nazek/image/upload/v1690834782/readme/login.png)
+
+## Read more
+
+Each article has the 'more' link, user could click on it in order to read the rest of the article and participate (write comment, like, save articles).
+Also, the moderator can manage his/her own articles using this link.
+![Read more](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/read-more.png)
+
+## Add article
+
+Users with Moderator privileges can add new articles using the below form.
+![Add article](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/add-article.png)
+
+## Update/Delete article
+
+Users with Moderator privileges can update or delete their own articles.
+![Update/Delete article](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/update-delete.png)
+
+## Comment/Like/Bookmark
+
+Logged in users can interact by leaving a comment or like/save a specific article.
+![Comment/Like/Bookmark](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/comment-like-bookmark.png)
+
+## Add topic
+
+User with a Moderator privileges can add a new topic using the related form, later on they may create new articles under this new added topic.
+![Add topic](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/add-topic.png)
+
+## Search articles
+
+All users including visitors can search for articles by to the author name or the article title/topic.
+![Search articles](https://res.cloudinary.com/nazek/image/upload/v1690834783/readme/search.png)
 
 # Testing
 
@@ -93,9 +135,22 @@ Manual test is applied at all user stories,  available at the following [accepta
 
 # Fixed Bugs
 
-## Bugs Guide
-
-Bugs are found continuously, here are the [known bugs](FIXED-BUGS.md) sofar .
+- Bug: search feature fail to retrieve articles according to author name.
+  - fix: add 'username' in query.
+- Bug : Empty page displayed when no articles found
+  - fix: add condition in search template to display 'no articles found' if no articles exist.
+- Bug : layout of the home page break in mobile devices
+  - fix : add media queries for smaller screen width.
+- Bug :  push failed in heruko
+  - fix: update the  backports.zoneinfo in requirement.txt.
+- Bug: comment is not saved
+  - Fix: add condition to check if comment form is valid.
+- Bug: Get wrong number of likes
+  - Fix : move the likes accumulator statement outside the if clause in get_context_data method.
+- Bugs: errors accours because of typo in views methods and some templates.
+  - Fix: correct variables/fields names.
+- Bugs: Get errors and warnings when validating templates.
+  - fix: remove duplicated Ids used in multiple elements, remove un-used tags.
 
 # Un-fixed Bug
 - Bug: p element shown when editing the article for update, 
